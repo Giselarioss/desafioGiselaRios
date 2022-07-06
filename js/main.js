@@ -20,6 +20,8 @@ for (let i = 1; i <= 10; i++) {
         else {
             alert(ingresarNombre + " tenes obesidad...saca un turno con nuestros especialistas.")
         }
-        alert("Turno N " + i)
+        alert("Turno N " + i);
+        
     }    
 }
+alert("Te pedimos disculpas no tenemos mas turno.")
