@@ -11,7 +11,7 @@ function agregarCarrito(producto, color, precio, stock){
         console.log('No tenemos stock de: '+ producto);
     }  
 }
-console.log('Tenga en cuenta que el tiempo de fabricacion son 35 dias')
+
 
 //------------------------------------//
 //----------------Stock---------------//
@@ -28,7 +28,7 @@ function stockReal(stock){
 //------------------------------------//
 //-Contador de cliente para promocion-//
 //------------------------------------//
-for (let i = 1; i <= 3; i++) {
+for (let i = 1; i <= 5; i++) {
     let ingresarNombre = prompt('Ingresa tu nombre');
     let mail = prompt('Bienvenida/o ' + ingresarNombre + ' ingresa tu mail y recibi las ofertas del mes');
     
@@ -40,6 +40,9 @@ for (let i = 1; i <= 3; i++) {
 
     if(i == 3){
         alert('Felicitaciones eres nuestro cliente numero 3 y te regalamos un %10 off')
+    }
+    else if( i == 5){
+        alert('Eres el ultimo pedido del dia y el tiempo de entrega excede las 24 hs') 
     }
     
 }    
