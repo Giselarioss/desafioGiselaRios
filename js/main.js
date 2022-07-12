@@ -39,10 +39,10 @@ for (let i = 1; i <= 5; i++) {
     agregarCarrito('sillon', 'negro', 18000, 2)
 
     if(i == 3){
-        alert('Felicitaciones eres nuestro cliente numero 3 y te regalamos un %10 off')
+        console.log('Felicitaciones eres nuestro cliente numero 3 y te regalamos un %10 off')
     }
     else if( i == 5){
-        alert('Eres el ultimo pedido del dia y el tiempo de entrega excede las 24 hs') 
+        console.log('Eres el ultimo pedido del dia y el tiempo de entrega excede las 24 hs') 
     }
     
 }    
