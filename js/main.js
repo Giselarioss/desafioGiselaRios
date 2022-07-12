@@ -39,8 +39,8 @@ function stockReal(stock){
     }
 }
 
-//----Llamamos la funcion------------//
+//---------Llamamos la funcion------------//
 agregarCarrito('sillon', 'blanco', 18000, 1);
 agregarCarrito('mesa', 'gris', 25000, 0);
 agregarCarrito('silla', 'rojo', 4000, 1);
-agregarCarrito('sillon', 'negro', 18000, 2)
+agregarCarrito('sillon', 'negro', 18000, 2);
