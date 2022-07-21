@@ -79,6 +79,6 @@ borrarProductoCarrito(001);
 const total = (carrito.reduce((acc,el)=>acc+el.precio,0));
 console.log('Total a pagar $'+ total);
 
-
+// No logro restar el importe del producto con stock 0, si le pongo stock 0, igual me lo suma.
 
 
