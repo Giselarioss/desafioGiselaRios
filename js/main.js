@@ -6,10 +6,23 @@ let ingreasarMail = prompt('Bienvenida/o ' + ingresarNombre + ' ingresa tu mail 
 //------------------------------------//
 
 const carrito = [
-    { id:001, name: 'sillon', precio: 18000},
-    { id:002,name: 'silla', precio: 4000},
-    { id:003, name: 'mesa', precio: 25000},     
+    { id:001, producto: 'sillon', precio: 18000},
+    { id:002, producto: 'silla', precio: 4000},
+    { id:003, producto: 'mesa', precio: 25000},     
 ]
+
+//-------------------------------------//
+//----------Busqueda x precio---------//
+//------------------------------------//
+
+const filtrarPrecio = carrito.filter((el)=> el.precio < 20000);
+console.log(filtrarPrecio);
+
+//-------------------------------------//
+//----------Busqueda x nombre---------//
+//------------------------------------//
+const filtrarNombre = carrito.filter((el)=> el.producto === 'mesa');
+console.log(filtrarNombre);
 
 
 //------------------------------------//
@@ -23,7 +36,6 @@ function stockReal(stock){
         return ' Te pedimos disculpas no tenemos stock';
     }
 }
-
 
 
 //------------------------------------//
@@ -63,6 +75,7 @@ agregarCarrito('silla', 1,'rojo');
 //---------Llamamos la funcion para borrar al carrito------------//
 borrarProductoCarrito(001); 
 
+//-----------------Suma total del carrito------------------------//
 const total = (carrito.reduce((acc,el)=>acc+el.precio,0));
 console.log('Total a pagar $'+ total);
 
