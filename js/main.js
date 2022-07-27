@@ -1,3 +1,22 @@
+//------------------------------------//
+//-------Modificaciones de texto------//
+//------------------------------------//
+
+//----Cambio h1
+let titulo = document.getElementById('titulo');
+//----queria probar como se veia en la consola--//
+titulo.innerText= 'nuevo h1';
+console.log (titulo.innerText);
+
+titulo.innerHTML= 'Muebles de diseño para tu hogar';
+//---Cambio parrafo
+let parrafo = document.getElementById('parrafo');
+parrafo.innerHTML = 'Renova tu hogar con muebles de alta calidad';
+
+
+
+
+
 let ingresarNombre = prompt('Ingresa tu nombre');
 let ingreasarMail = prompt('Bienvenida/o ' + ingresarNombre + ' ingresa tu mail y recibi las ofertas del mes');
 
@@ -6,10 +25,23 @@ let ingreasarMail = prompt('Bienvenida/o ' + ingresarNombre + ' ingresa tu mail 
 //------------------------------------//
 
 const carrito = [
-    { id:001, producto: 'sillon', precio: 18000},
-    { id:002, producto: 'silla', precio: 4000},
-    { id:003, producto: 'mesa', precio: 25000},     
+    { id:001, producto: 'sillon', precio: 40000, img:'imagenes/sillon.png'},
+    { id:002, producto: 'silla', precio: 20000, img:'imagenes/silla.png'},
+    { id:003, producto: 'mesa', precio: 70000, img:'imagenes/mesa.png'},     
 ]
+//-------------------------------------//
+//----------Creamos card--------------//
+//------------------------------------//
+let cards = document.getElementById('card');
+for (const producto of carrito){
+    let contenedorCard = document.createElement("div");
+    contenedorCard.innerHTML=` 
+    <img src="${producto.img}">   
+    <h3> ${producto.producto}</h3>
+    <p> $${producto.precio}</p>
+    <button>Agregar al carrito</button>`;
+    cards.appendChild(contenedorCard);
+}
 
 //-------------------------------------//
 //----------Busqueda x precio---------//
