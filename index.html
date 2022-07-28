@@ -6,57 +6,67 @@
         <meta name="description" content="" />
         <meta name="author" content="" />            
         <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />        
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
         <title>Muebles de diseño</title>   
     </head>
     <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!"><img src="logo/logo.jpeg" alt="logo de la empresa"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Nosotros</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">Productos</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Mesas</a></li>
-                                <li><a class="dropdown-item" href="#!">Mesas ratonas</a></li>
-                                <li><a class="dropdown-item" href="#!">Sillas</a></li>
-                                <li><a class="dropdown-item" href="#!">Sillones</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
+        <header>
+            <!-- Navigation-->
+            <div class="nav-bar">
+                <div class="container-fluid">
+                    <nav class="container-fluid navbar navbar-expand-lg navbar-light">
+                        <div class="container padding-nav">
+                            <a class="navbar-brand" href="index.html"><img src="logo/logo.jpeg"alt="logo de la empresa"></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse nav-position nav-mobile" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                    <a class="nav-link" href="#">Home</a>
+                                    <a class="nav-link" href="#">Nosotros</a>                                    
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">productos</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a class="dropdown-item" href="#">Sillones</a></li>
+                                            <li><a class="dropdown-item" href="#">Sillas</a></li>
+                                            <li><a class="dropdown-item" href="#">Mesas</a></li>
+                                        </ul>
+                                    </li>
+                                    <div class="d-flex search">
+                                        <form>
+                                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">                                            
+                                        </form>     
+                                        <button class="btn btn-outline-dark" type="submit">
+                                            <i class="bi-cart-fill me-1"></i>
+                                            Cart
+                                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>        
+                        </div>        
+                    </nav>        
                 </div>
-            </div>
-        </nav>
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 id= titulo class="display-4 fw-bolder">Shop in style</h1>
-                    <p id= parrafo class=" lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div>
-            </div>
+            </div>        
         </header>
-        <!---------Seccion comprar------>
-        <section id="card">
-            
-
-        </section>
+        
+        <main>
+            <div class="container-fluid px-4 px-lg-5 my-5 bg-dark py-5">
+                <div class="text-center text-white">
+                    <h1 id=titulo class="display-4 fw-bolder">Shop in style</h1>
+                    <p id=parrafo class=" lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                </div>
+            </div>        
+            <!---------Seccion comprar------>
+            <section id="card" class="d-flex justify-content-center"></section>
+        </main>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
