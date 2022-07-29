@@ -19,34 +19,36 @@
             <div class="nav-bar">
                 <div class="container-fluid">
                     <nav class="container-fluid navbar navbar-expand-lg navbar-light">
-                        <div class="container padding-nav">
+                        <div class="container-fluid padding-nav">
                             <a class="navbar-brand" href="index.html"><img src="logo/logo.jpeg"alt="logo de la empresa"></a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                                 aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse nav-position nav-mobile" id="navbarNavAltMarkup">
-                                <div class="navbar-nav">
-                                    <a class="nav-link" href="#">Home</a>
-                                    <a class="nav-link" href="#">Nosotros</a>                                    
+                            <div class="collapse navbar-collapse nav-position" id="navbarNavAltMarkup">
+                                <div class="navbar-nav menu">
+                                    <a class="nav-link" href="#home">Inicio</a>
+                                    <a class="nav-link" href="#empresa">Empresa</a> 
+                                    <a class="nav-link" href="#">Contacto</a>                                   
                                     <li class="dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false">productos</a>
+                                        <a class="nav-link dropdown-toggle" href="#card" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">Productos</a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             <li><a class="dropdown-item" href="#">Sillones</a></li>
                                             <li><a class="dropdown-item" href="#">Sillas</a></li>
                                             <li><a class="dropdown-item" href="#">Mesas</a></li>
+                                            <li><a class="dropdown-item" href="#">Comodas</a></li>
+                                            <li><a class="dropdown-item" href="#">Bancos</a></li>
+                                            
                                         </ul>
-                                    </li>
+                                    </li>                                    
                                     <div class="d-flex search">
                                         <form>
                                             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">                                            
                                         </form>     
                                         <button class="btn btn-outline-dark" type="submit">
-                                            <i class="bi-cart-fill me-1"></i>
-                                            Cart
-                                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                                            <i class="bi-cart-fill me-1"></i>Mi compra<span class="badge text-white ms-1 rounded-pill">0</span>
                                         </button>
                                     </div>
                                 </div>
@@ -58,12 +60,15 @@
         </header>
         
         <main>
-            <div class="container-fluid px-4 px-lg-5 my-5 bg-dark py-5">
-                <div class="text-center text-white">
-                    <h1 id=titulo class="display-4 fw-bolder">Shop in style</h1>
-                    <p id=parrafo class=" lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+            <div id="home">
+                <div class="text-center text-white inicio ">
+                    <div>
+                        <h1 id=titulo class="display-4 fw-bolder">Shop in style</h1>
+                        <p id=parrafo class=" lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    </div>
                 </div>
-            </div>        
+            </div>
+            <section class="text-center container" id="empresa">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In molestiae adipisci iusto ea velit, provident sed, ab qui ut aliquam expedita nulla hic numquam. Laborum praesentium blanditiis illo cumque quidem?</section>        
             <!---------Seccion comprar------>
             <section id="card" class="d-flex justify-content-center"></section>
         </main>

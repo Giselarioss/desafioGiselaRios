@@ -27,7 +27,10 @@ let ingreasarMail = prompt('Bienvenida/o ' + ingresarNombre + ' ingresa tu mail 
 const carrito = [
     { id:001, producto: 'sillon', precio: 40000, img:'imagenes/sillon.png'},
     { id:002, producto: 'silla', precio: 20000, img:'imagenes/silla.png'},
-    { id:003, producto: 'mesa', precio: 70000, img:'imagenes/mesa.png'},     
+    { id:003, producto: 'mesa', precio: 70000, img:'imagenes/mesa.png'},
+    { id:004, producto: 'comoda', precio: 60000, img:'imagenes/comoda.png'},
+         
+         
 ]
 //-------------------------------------//
 //----------Creamos card--------------//
@@ -35,10 +38,10 @@ const carrito = [
 let cards = document.getElementById('card');
 for (const producto of carrito){
     let contenedorCard = document.createElement("div");
-    contenedorCard.innerHTML=` 
-    <img src="${producto.img}">   
-    <h3> ${producto.producto}</h3>
-    <p> $${producto.precio}</p>
+    contenedorCard.innerHTML=`
+    <img class= 'text-center' src="${producto.img}">   
+    <h3 class= 'text-center'> ${producto.producto}</h3>
+    <p class= 'text-center'> $${producto.precio}</p>
     <button>Agregar al carrito</button>`;
     cards.appendChild(contenedorCard);
 }
