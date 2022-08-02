@@ -1,0 +1,34 @@
+#card{
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    text-align: center;
+    .card1{
+        border: solid 2px  rgb(0, 82, 86); 
+        border-top-left-radius: 15px;  
+        border-top-right-radius: 15px;  
+        img{
+            border-radius: 10px;
+        }
+        h3{
+            font-family: 'great';
+            font-size: 2rem;
+        }
+        span{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            font-size: 1rem;
+        }
+        .btn{
+            background-color: rgb(129, 169, 172);
+            font-family: 'great';
+            font-weight: bolder;
+            font-size: 1.3rem;
+            border-radius: 10px;
+            border: 2px solid rgb(0, 82, 86);
+            
+        }
+    }
+    
+}    
