@@ -84,7 +84,7 @@ for (const producto of carrito){
     </div>
     </div>    
     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-    <div class="text-center"><a class="btn btn-outline-dark mt-auto"id='${idButton}'href="#">Agregar al carrito</a></div>
+    <div class="text-center"><a class="btn btn-outline-dark mt-auto"id='${idButton}'href="#">Agregar<img src=imagenes/carrito.png> </a></div>
     </div>
     </div>
     </div>`;

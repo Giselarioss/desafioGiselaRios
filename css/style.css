@@ -49,7 +49,8 @@
   border-top-right-radius: 15px;
 }
 #card .card1 img {
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 #card .card1 h3 {
   font-family: "great";
@@ -62,11 +63,13 @@
 }
 #card .card1 .btn {
   background-color: rgb(100, 157, 161);
-  font-family: "great";
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 0.8rem;
   font-weight: bolder;
-  font-size: 1.3rem;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 2px solid rgb(0, 82, 86);
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 #home {
