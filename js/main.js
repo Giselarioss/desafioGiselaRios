@@ -15,105 +15,50 @@ parrafo.innerHTML = 'Renova tu hogar con muebles de alta calidad';
 
 
 
-
-
-let ingresarNombre = prompt('Ingresa tu nombre');
-let ingreasarMail = prompt('Bienvenida/o ' + ingresarNombre + ' ingresa tu mail y recibi las ofertas del mes');
-
 //------------------------------------//
 //--------------productos-------------//
 //------------------------------------//
+//---- ?? pregunta si es undefined o null devuelve array vacio, si no devuelve el valor que esta ahi
+const miCarrito = JSON.parse(localStorage.getItem('miCarrito')) ?? [];
+//---- modifica el numero en el carrito
+document.getElementById('mi-compra').innerHTML = miCarrito.length;
 
 const carrito = [
-    { id:001, producto: 'sillon', precio: 40000, img:'imagenes/sillon.png'},
-    { id:002, producto: 'silla', precio: 20000, img:'imagenes/silla.png'},
-    { id:003, producto: 'mesa', precio: 70000, img:'imagenes/mesa.png'},
-    { id:004, producto: 'comoda', precio: 60000, img:'imagenes/comoda.png'},
-         
-         
+    { id:001, producto: 'Sillon Mandy', precio: 40000, img:'imagenes/sillon.png', categoria: 'Sillon' },
+    { id:002, producto: 'Silla Novak', precio: 20000, img:'imagenes/silla.png', categoria: 'Silla'},
+    { id:003, producto: 'Mesa Brow', precio: 70000, img:'imagenes/mesa.png', categoria: 'Mesa'},
+    { id:004, producto: 'Comoda Tm', precio: 60000, img:'imagenes/comoda.png', categoria: 'Comoda'},     
 ]
 //-------------------------------------//
 //----------Creamos card--------------//
 //------------------------------------//
 let cards = document.getElementById('card');
 for (const producto of carrito){
+    const idButton = `add-cart${producto.id}`
     let contenedorCard = document.createElement("div");
-    contenedorCard.innerHTML=`
-    <img class= 'text-center' src="${producto.img}">   
-    <h3 class= 'text-center'> ${producto.producto}</h3>
-    <p class= 'text-center'> $${producto.precio}</p>
-    <button>Agregar al carrito</button>`;
+    contenedorCard.innerHTML=`       
+    <img class="card-img-top" src= ${producto.img} >
+    <div class="card-body p-4">
+    <div class="text-center">
+    <h3 class="fw-bolder">${producto.producto}</h3>    
+    <span class="text-muted">$${producto.precio}</span>    
+    </div>
+    </div>    
+    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+    <div class="text-center"><a class="btn btn-outline-dark mt-auto"id='${idButton}'href="#">Agregar al carrito</a></div>
+    </div>
+    </div>`;
     cards.appendChild(contenedorCard);
 }
 
-//-------------------------------------//
-//----------Busqueda x precio---------//
-//------------------------------------//
 
-const filtrarPrecio = carrito.filter((el)=> el.precio < 20000);
-console.log(filtrarPrecio);
-
-//-------------------------------------//
-//----------Busqueda x nombre---------//
-//------------------------------------//
-const filtrarNombre = carrito.filter((el)=> el.producto === 'mesa');
-console.log(filtrarNombre);
-
-
-//------------------------------------//
-//----------------Stock---------------//
-//------------------------------------//
-
-function stockReal(stock){
-    if(stock >0){
-        return 'tenemos stock';
-    }else{
-        return ' Te pedimos disculpas no tenemos stock';
+carrito.forEach((producto) =>{
+    const idButton = `add-cart${producto.id}`
+    document.getElementById(idButton).onclick = () => {
+        miCarrito.push(producto);
+        document.getElementById('mi-compra').innerHTML = miCarrito.length;
+        localStorage.setItem('miCarrito', JSON.stringify(miCarrito));
+        console.log('miCarrito');
     }
-}
-
-
-//------------------------------------//
-//---------Agregar al carrito---------//
-//------------------------------------//
-
-function agregarCarrito(producto, stock, color){                     
-    const tenemosStock = stockReal(stock); 
-    if(tenemosStock == 'tenemos stock'){        
-        console.log(producto +' fue agregado a tu carrito de compras, en color  '+ color + '.');
-    }else{ 
-        if(stock == 0){            
-            console.log('No tenemos stock de: '+ producto +', en una semana vuelve a entrar');
-
-        }       
-        
-    }       
-}
-
-//------------------------------------//
-//------Borrar producto carrito-------//
-//------------------------------------//
-
-function borrarProductoCarrito (idProducto){
-    const index = carrito.findIndex((producto) => producto.id === idProducto); 
-    carrito.splice(index,1)   
-    console.log(carrito);  
-}
-
-
-//---------Llamamos la funcion para agregar al carrito------------//
-agregarCarrito('sillon', 1, 'rosa');
-agregarCarrito('mesa', 1,'negro');
-agregarCarrito('silla', 1,'rojo');  
-
-
-//---------Llamamos la funcion para borrar al carrito------------//
-borrarProductoCarrito(001); 
-
-//-----------------Suma total del carrito------------------------//
-const total = (carrito.reduce((acc,el)=>acc+el.precio,0));
-console.log('Total a pagar $'+ total);
-
-// No logro restar el importe del producto con stock 0, si le pongo stock 0, igual me lo suma.
-
+})
 

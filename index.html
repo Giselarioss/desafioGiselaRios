@@ -35,11 +35,11 @@
                                         <a class="nav-link dropdown-toggle" href="#card" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
                                             aria-expanded="false">Productos</a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a class="dropdown-item" href="#">Sillones</a></li>
-                                            <li><a class="dropdown-item" href="#">Sillas</a></li>
-                                            <li><a class="dropdown-item" href="#">Mesas</a></li>
-                                            <li><a class="dropdown-item" href="#">Comodas</a></li>
-                                            <li><a class="dropdown-item" href="#">Bancos</a></li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Sillon">Sillones</a></li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Silla">Sillas</a></li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Mesa">Mesas</a></li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Comoda">Comodas</a></li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Banco">Bancos</a></li>
                                             
                                         </ul>
                                     </li>                                    
@@ -48,7 +48,7 @@
                                             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">                                            
                                         </form>     
                                         <button class="btn btn-outline-dark" type="submit">
-                                            <i class="bi-cart-fill me-1"></i>Mi compra<span class="badge text-white ms-1 rounded-pill">0</span>
+                                            <i class="bi-cart-fill me-1"></i>Mi compra<span id="mi-compra" class="badge text-white ms-1 rounded-pill">0</span>
                                         </button>
                                     </div>
                                 </div>
@@ -70,7 +70,9 @@
             </div>
             <section class="text-center container" id="empresa">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In molestiae adipisci iusto ea velit, provident sed, ab qui ut aliquam expedita nulla hic numquam. Laborum praesentium blanditiis illo cumque quidem?</section>        
             <!---------Seccion comprar------>
-            <section id="card" class="d-flex justify-content-center"></section>
+            <section id="card" class="py-5 d-flex justify-content-center" >
+                <div class="card h-100"></div>    
+            </section>
         </main>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
