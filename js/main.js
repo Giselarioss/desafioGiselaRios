@@ -90,8 +90,6 @@ for (const producto of carrito){
     </div>`;
     cards.appendChild(contenedorCard);
 }
-
-
 carrito.forEach((producto) =>{
     const idButton = `add-cart${producto.id}`
     document.getElementById(idButton).onclick = () => {
