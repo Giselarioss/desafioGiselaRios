@@ -1,27 +1,18 @@
-//------------------------------------//
-//-------Modificaciones de texto------//
-//------------------------------------//
 
-//----Cambio h1
-let titulo = document.getElementById('titulo');
-//----queria probar como se veia en la consola--//
-titulo.innerText= 'nuevo h1';
-console.log (titulo.innerText);
+//---- ?? pregunta si es undefined o null devuelve array vacio, si no devuelve el valor que esta ahi
+const miCarrito = JSON.parse(localStorage.getItem('miCarrito')) ?? [];
+const total = miCarrito.reduce((acc, el) => acc + el.precio, 0);
+//---- modifica el numero en el carrito
+document.getElementById('mi-compra').innerHTML = `${miCarrito.length}`;
+document.getElementById('total-compra').innerHTML = `$${total}`;
 
-titulo.innerHTML= 'Muebles de diseño para tu hogar';
-//---Cambio parrafo
-let parrafo = document.getElementById('parrafo');
-parrafo.innerHTML = 'Renova tu hogar con muebles de alta calidad';
+
 
 
 
 //------------------------------------//
 //--------------productos-------------//
 //------------------------------------//
-//---- ?? pregunta si es undefined o null devuelve array vacio, si no devuelve el valor que esta ahi
-const miCarrito = JSON.parse(localStorage.getItem('miCarrito')) ?? [];
-//---- modifica el numero en el carrito
-document.getElementById('mi-compra').innerHTML = miCarrito.length;
 
 const carrito = [
     { id:001, producto: 'Sillon Mand', precio: 80000, img:'imagenes/sillon/sillon.png', categoria: 'Sillon' },
@@ -68,6 +59,20 @@ const carrito = [
     { id:052, producto: 'Comoda Colm', precio: 68000, img:'imagenes/comoda/comoda5.png', categoria: 'Comoda'},         
 ]
 //-------------------------------------//
+//--------Generamos card carrito------//
+//------------------------------------//
+function carritoCard (){    
+    miCarrito.forEach((producto) => {
+        document.getElementById('card-compra').innerHTML += `        
+        <tr>
+            <th><img class="img-modal" src='${producto.img}'></th>            
+            <th class="prod-modal text-center">${producto.producto}</th>
+            <th class="precio-modal text-center"> $${producto.precio}</th>
+            <a class="boton-modal btn btn-white flex-end"><img src='imagenes/eliminar.png'></a>
+        </tr>`
+    })
+}
+//-------------------------------------//
 //----------Creamos card--------------//
 //------------------------------------//
 let cards = document.getElementById('card');
@@ -80,7 +85,7 @@ for (const producto of carrito){
     <div class="card-body p-4">
     <div class="producto text-center">
     <h3 class="fw-bolder">${producto.producto}</h3>    
-    <span class="text-muted">$${producto.precio}</span>    
+    <span>$${producto.precio}</span>    
     </div>
     </div>    
     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -90,15 +95,25 @@ for (const producto of carrito){
     </div>`;
     cards.appendChild(contenedorCard);
 }
+//-------------------------------------//
+//-------Acciones del carrito----------//
+//------------------------------------//
 carrito.forEach((producto) =>{
     const idButton = `add-cart${producto.id}`
     document.getElementById(idButton).onclick = () => {
         miCarrito.push(producto);
-        document.getElementById('mi-compra').innerHTML = miCarrito.length;
+        // se ve reflejado la cantidad del carrito en el html        
         localStorage.setItem('miCarrito', JSON.stringify(miCarrito));
-        console.log('Agrego '+ producto.producto + ' a su carrito');
+        // total de la compra
         const total = miCarrito.reduce((acc, el) => acc + el.precio, 0);
-        console.log('Total gastado: $'+ total);
+        document.getElementById('mi-compra').innerHTML = `${miCarrito.length}`;
+        document.getElementById('total-compra').innerHTML = `$${total}`;
+        // limpiar 
+        document.getElementById('card-compra').innerHTML = '';
+        // Resumen de la compra  
+        
+        
+        
     }
 })
 

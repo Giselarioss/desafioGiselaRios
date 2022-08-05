@@ -20,7 +20,7 @@
                 <div class="container-fluid">
                     <nav class="container-fluid navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid padding-nav">
-                            <a class="navbar-brand" href="index.html"><img src="logo/logo.jpeg"alt="logo de la empresa"></a>
+                            <a class="navbar-brand" href="index.html"><img src="logo/logo.jpeg" alt="logo de la empresa"></a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                                 aria-label="Toggle navigation">
@@ -29,48 +29,91 @@
                             <div class="collapse navbar-collapse nav-position" id="navbarNavAltMarkup">
                                 <div class="navbar-nav menu">
                                     <a class="nav-link" href="#home">Inicio</a>
-                                    <a class="nav-link" href="#empresa">Empresa</a> 
-                                    <a class="nav-link" href="#">Contacto</a>                                   
+                                    <a class="nav-link" href="#empresa">Empresa</a>
+                                    <a class="nav-link" href="#">Contacto</a>
                                     <li class="dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#card" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false">Productos</a>
+                                        <a class="nav-link dropdown-toggle" href="#card" id="navbarDropdownMenuLink"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Sillon">Sillones</a></li>
-                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Silla">Sillas</a></li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Sillon">Sillones</a>
+                                            </li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Silla">Sillas</a>
+                                            </li>
                                             <li><a class="dropdown-item filtrar-categoria" data-categoria="Mesa">Mesas</a></li>
-                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Comoda">Comodas</a></li>
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Comoda">Comodas</a>
+                                            </li>
                                             <li><a class="dropdown-item filtrar-categoria" data-categoria="Banco">Puff</a></li>
-                                            
+        
                                         </ul>
-                                    </li>                                    
+                                    </li>
                                     <div class="d-flex search">
                                         <form>
-                                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">                                            
-                                        </form>     
-                                        <button class="btn btn-outline-dark" type="submit">
+                                            <input class="form-control me-2" type="search" placeholder="Buscar"
+                                                aria-label="Search">
+                                        </form>
+                                        <!-- Button trigger modal -->
+                                        <button class="btn btn-outline-dark" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" onclick="carritoCard()">
                                             <i class="bi-cart-fill me-1"></i>Mi compra<span id="mi-compra" class="badge text-white ms-1 rounded-pill">0</span>
-                                        </button>
+                                        </button>                          
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog modal-m modal-border ">
+                                                <div class="modal-content" id="modal">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel"><img src="logo/logo.jpeg"></h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            ><img src="imagenes/cerrar.png"></button>
+                                                    </div>
+                                                    <div class="modal-body" id="card-compra">
+                                                        <!----------Seccion Pop up------>
+                                                        <table class="table" id="table" >
+                                                            <thead id="table" style="background-color: rgb(0, 82, 86) ">
+                                                                <tr>
+                                                                    <th scope="col">Resumen de compra: </th>                                                                    
+                                                                    
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="table-group-divider" id="resumen-compra">
+                                                    
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="d-flex">
+                                                            <p>Total: </p>
+                                                            <p id="total-compra"> $</p>
+                                                        </div>                                                        
+                                                        <button type="button" class="btn boton-vaciar">Vaciar Carrito</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>        
-                        </div>        
-                    </nav>        
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-            </div>        
+            </div>
         </header>
         
         <main>
             <div id="home">
                 <div class="text-center text-white inicio ">
                     <div>
-                        <h1 id=titulo class="display-4 fw-bolder">Shop in style</h1>
-                        <p id=parrafo class=" lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                        <h1 id=titulo class="display-4 fw-bolder">Muebles de diseño para tu hogar</h1>
+                        <p id=parrafo class=" lead fw-normal text-white-50 mb-0">Renova tu hogar con muebles de alta calidad</p>
                     </div>
                 </div>
             </div>
-            <section class="text-center container" id="empresa">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In molestiae adipisci iusto ea velit, provident sed, ab qui ut aliquam expedita nulla hic numquam. Laborum praesentium blanditiis illo cumque quidem?</section>        
+            <!----------Seccion empresa------>
+            <section class="text-center container" id="empresa">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In molestiae adipisci iusto ea velit, provident sed, ab qui ut aliquam expedita nulla hic numquam. Laborum praesentium blanditiis illo cumque quidem?</section> 
+            
             <!---------Seccion comprar------>
             <section class="py-5 container row row-cols-1 row-cols-sm-3 g-4 " id="card"></section>
+            
         </main>
         <!-- Footer-->
         <footer class="py-5 bg-dark">

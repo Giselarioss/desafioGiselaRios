@@ -1,0 +1,31 @@
+.modal-border{    
+    border: 2px solid rgb(0, 82, 86);
+    border-radius: 15px;
+    #modal{
+        background-color: white;
+        h5 {
+            font-family: 'great';
+            font-size: 2rem;
+            font-weight: bolder;
+            letter-spacing: 2px;    
+        }
+        button img{
+            color: rgb(0, 82, 86);
+        }
+        #table{
+            font-family: 'great';
+            font-size: 1.5rem;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            #img-modal{
+                width: 50px;
+            }
+        }
+    }
+}
+.img-modal{    
+    width: 150px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+}
+

@@ -5,15 +5,14 @@
     justify-content: center;    
     text-align: center;
     .card1{
-        border: solid 2px  rgb(0, 82, 86); 
-        border-top-left-radius: 15px;  
-        border-top-right-radius: 15px;  
+        
         img{
             border-top-left-radius: 10px;  
             border-top-right-radius: 10px;
         }
         h3{
             font-family: 'great';
+            letter-spacing: 1px;
             font-size: 2rem;
         }
         span{
@@ -22,7 +21,7 @@
             font-size: 1rem;
         }
         .btn{
-            background-color: rgb(100, 157, 161);
+            background-color: rgb(88, 136, 139);
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
             font-size: 0.8rem;
             font-weight: bolder;
