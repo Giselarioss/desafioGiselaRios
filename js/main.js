@@ -1,4 +1,3 @@
-
 //---- ?? pregunta si es undefined o null devuelve array vacio, si no devuelve el valor que esta ahi
 const miCarrito = JSON.parse(localStorage.getItem('miCarrito')) ?? [];
 const total = miCarrito.reduce((acc, el) => acc + el.precio, 0);
@@ -109,11 +108,34 @@ carrito.forEach((producto) =>{
         document.getElementById('mi-compra').innerHTML = `${miCarrito.length}`;
         document.getElementById('total-compra').innerHTML = `$${total}`;
         // limpiar 
-        document.getElementById('card-compra').innerHTML = '';
-        // Resumen de la compra  
-        
+        document.getElementById('card-compra').innerHTML = '';    
         
         
     }
 })
+
+//-------------------------------------//
+//--Eliminar producto y vaciar carrito-//     NO ME SALE BORRAR PRODUCTO DEL CARRITO NI VACIAR CARRITO!!!
+//------------------------------------//
+//function eliminarProducto() {
+//    carrito.forEach((producto) => {
+//        const idButtonE = `borrar-card${producto.id}`;
+//        document.getElementById(idButtonE).onclick = () => {
+//            const eliminar = miCarrito.findIndex((acc, el) => acc + el.id === `${producto.id}`)
+//            if (index != -1) {
+//                miCarrito.splice(index, 1)
+//            }
+//            document.getElementById('card-compra').innerHTML = `${eliminar}`;
+//        }
+//    })
+////}
+
+// vaciar carrito
+//function limpiarCarrito() {
+ //   document.getElementById('vaciar-carrito').innerHTML = "";
+    
+//}
+
+
+
 
