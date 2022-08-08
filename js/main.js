@@ -1,3 +1,8 @@
+// operadores avanzados
+let nombre = prompt('Bienvenido ingrese su nombre');
+let edad = prompt ('Hola '+ nombre+ ' ingrese su edad');
+
+edad >= 18 ? alert('Bienvenido a MK Muebles') : alert('Necesita ser mayor de 18, para seguir con la compra')
 
 
 
@@ -74,6 +79,8 @@ const carrito = [
     { id:051, producto: 'Comoda Sut', precio: 65000, img:'imagenes/comoda/comoda4.png', categoria: 'Comoda'},
     { id:052, producto: 'Comoda Colm', precio: 68000, img:'imagenes/comoda/comoda5.png', categoria: 'Comoda'},         
 ]
+
+
 //-------------------------------------//
 //--------Generamos card carrito------//
 //------------------------------------//
@@ -85,7 +92,7 @@ function carritoCard (){
             <th class="prod-modal text-center">${producto.producto}</th>
             <th class="precio-modal text-center"> $${producto.precio}</th>
             
-            <a class="boton-modal btn style"><img src='imagenes/eliminar.png'></a>
+            <a class="boton-modal btn "id= "borrar-producto" onclick="eliminarProducto(${producto.id})"><img src='imagenes/eliminar.png'></a>
         </tr>`
     })
     
@@ -137,18 +144,16 @@ carrito.forEach((producto) =>{
 //-------------------------------------//
 //--Eliminar producto y vaciar carrito-//     NO ME SALE BORRAR PRODUCTO DEL CARRITO NI VACIAR CARRITO!!!
 //------------------------------------//
-//function eliminarProducto() {
-//    carrito.forEach((producto) => {
-//        const idButtonE = `borrar-cart${producto.id}`;
-//        document.getElementById(idButtonE).onclick = () => {
-//            const eliminar = miCarrito.findIndex((acc, el) => acc + el.id === `${producto.id}`)
-//            if (index != -1) {
-//                miCarrito.splice(index, 1)
-//            }
-//            document.getElementById('card-compra').innerHTML = `${eliminar}`;
-//        }
-//    })
-////}
+function eliminarProducto(idProducto) {        
+    const index = miCarrito.findIndex((acc, el) => acc + el.id === idProducto)
+        if (index != -1) {
+                miCarrito.splice(index, 1)
+        }
+    carritoCard()    
+    
+      
+    
+}
 
 // vaciar carrito
 //function vaciarCarrito() {
