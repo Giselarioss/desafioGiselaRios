@@ -8,7 +8,8 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/style.css" rel="stylesheet" />
         <title>Muebles de diseño</title>   
@@ -53,39 +54,32 @@
                                         </form>
                                         <!-- Button trigger modal -->
                                         <button class="btn btn-outline-dark" type="button" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" onclick="carritoCard()">
-                                            <i class="bi-cart-fill me-1"></i>Mi compra<span id="mi-compra" class="badge text-white ms-1 rounded-pill">0</span>
+                                        data-bs-target="#exampleModal">
+                                            <i class="bi-cart-fill me-1"id="carrito"></i>Mi compra<span id="contadorCarrito" class="badge text-white ms-1 rounded-pill contador-carrito">0</span>
                                         </button>                          
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog modal-m modal-border ">
-                                                <div class="modal-content" id="modal">
+                                                <div class="modal-content" id="modal" class="mi-carrito" id="carritoLista">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel"><img src="logo/logo.jpeg"></h5>
+                                                        <h5 class="titulo-carrito"class="modal-title" id="exampleModalLabel"><img src="logo/logo.jpeg"></h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             ><img src="imagenes/cerrar.png"></button>
                                                     </div>
-                                                    <div class="modal-body" id="card-compra">
-                                                        <!----------Seccion Pop up------>
-                                                        <table class="table" id="table" >
-                                                            <thead id="table">
-                                                                <tr>
-                                                                    <th scope="col">Resumen de compra: </th>                                                                    
-                                                                    
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="table-group-divider">
-                                                    
-                                                            </tbody>
-                                                        </table>
+                                                    <div class="contenido-carrito" id="carritoContenido">
+                                                        <div class="caja-carrito" id="cajaCarrito">
+                                                        </div>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <div class="d-flex">
-                                                            <p>Total: </p>
-                                                            <p id="total-compra"> $</p>
-                                                        </div>                                                        
-                                                        <button type="button" class="btn" id="limpiarCarrito">Vaciar Carrito</button>
+                                
+                                                    <div class="total">
+                                                        <div class="total-titulo">Total: $</div>
+                                                        <div class="precio-total" id="precioTotal">$0</div>
+                                                    </div>
+                                
+                                                    <button type="button" id="btnComprar" class="btn-comprar">Comprar</button>
+                                                    
+                                                    <button type="button" class="btn" id="limpiarCarrito">Vaciar Carrito</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,7 +115,10 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- JS-->
+        <script src="js/productos.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
