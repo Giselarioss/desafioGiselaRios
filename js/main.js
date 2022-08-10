@@ -71,19 +71,20 @@ const compraProcesada = () => {
             icon: "error",
             color: "black",
             confirmButtonText: "OK",
-            confirmButtonColor: "black",
-            padding: "1rem 0.3rem"
+            confirmButtonColor: "rgb(0, 82, 86)",
+            padding: "0.3rem 0.3rem"            
         })
     }
     else {        
         Swal.fire({
             title: "¡Su compra ha sido procesada!",
-            iconColor: "#0263a0",
+            iconColor: "rgb(0, 82, 86)",
             icon: "success",
             color: "black",
             confirmButtonText: "OK",
-            confirmButtonColor: "black",
-            padding: "1rem 0.3rem"
+            confirmButtonColor: "rgb(0, 82, 86)",
+            padding: "0.3rem 0.3rem"
+            
         })
     }
     //--------- Spread del Carrito------------//
