@@ -71,7 +71,19 @@
   border-radius: 15px;
 }
 .modal-border #modal {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.7rem;
+  font-weight: bolder;
+  padding: 20px;
+  max-height: 100%;
   background-color: white;
+  position: fixed;
+  width: 40%;
+  right: 0;
+  top: 0;
+  transition: all 0.5s ease;
+  overflow-y: scroll;
+  transition: all 0.5s ease;
 }
 .modal-border #modal h5 {
   font-family: "great";
@@ -79,17 +91,10 @@
   font-weight: bolder;
   letter-spacing: 2px;
 }
-.modal-border #modal button img {
-  color: rgb(0, 82, 86);
-}
-.modal-border #modal #table {
-  font-family: "great";
-  font-size: 1.5rem;
-  font-weight: bolder;
-  letter-spacing: 2px;
-}
-.modal-border #modal #table #img-modal {
-  width: 50px;
+
+.cantidad-carrito {
+  width: 30px;
+  text-align: center;
 }
 
 .img-modal {

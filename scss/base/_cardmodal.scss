@@ -2,26 +2,32 @@
     border: 2px solid rgb(0, 82, 86);
     border-radius: 15px;
     #modal{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 0.7rem;
+        font-weight: bolder;
+        padding: 20px ;
+        max-height: 100%;
         background-color: white;
+        position: fixed;
+        width: 40%;
+        right: 0;
+        top: 0;        
+        transition: all 0.5s ease;       
+        overflow-y: scroll;
+        transition: all 0.5s ease;
         h5 {
             font-family: 'great';
             font-size: 2rem;
             font-weight: bolder;
             letter-spacing: 2px;    
         }
-        button img{
-            color: rgb(0, 82, 86);
-        }
-        #table{
-            font-family: 'great';
-            font-size: 1.5rem;
-            font-weight: bolder;
-            letter-spacing: 2px;
-            #img-modal{
-                width: 50px;
-            }
-        }
+        
+        
     }
+}
+.cantidad-carrito{
+    width: 30px;
+    text-align: center;
 }
 .img-modal{    
     width: 150px;

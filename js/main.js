@@ -1,9 +1,4 @@
 //---------------------------------------------------//
-//------------------Array de objetos----------------//
-//--------------------------------------------------//
-
-
-//---------------------------------------------------//
 //------------------------DOM------------------------//
 //--------------------------------------------------//
 let carritoIcono = document.querySelector("#carrito")
@@ -11,6 +6,7 @@ let carrito = document.querySelector(".mi-carrito")
 let precioTotal = document.getElementById("precioTotal")
 let contadorCarrito = document.getElementById("contadorCarrito")
 let botonComprar = document.getElementById("btnComprar")
+let vaciarCarrito = document.getElementById("vaciarCarrito")
 
 
 //---------------------------------------------------//
@@ -49,6 +45,26 @@ const compraProcesada = () => {
 }
 botonComprar.addEventListener("click", compraProcesada)
 
+//--------------------------------------------------//
+//---------------Boton vaciar carrito---------------//
+//--------------------------------------------------//
+vaciarCarrito.addEventListener("click", function vaciar(){
+    carro.length = 0;
+    Toastify({
+        text: "No tienes ningun producto en tu carrito de compras",
+        duration: 2000,
+        style: {
+            background: "rgb(0, 82, 86)",            
+            color: "white",
+        },
+        close: true,
+        gravity: "bottom",
+    }).showToast();
+    localStorage.removeItem("carro", JSON.stringify(carro))
+    actualizarCarrito();
+
+})
+
 //----Array en 0----//
 let carro = []
 
@@ -64,18 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
 //-----------------------Card-----------------------//
 //--------------------------------------------------//
 const contenedorProductos = document.getElementById("card")
-let productosTotal = [] 
+let productosTotal = [] ;
 fetch('../productos.json', {
 })
 .then((response) =>response.json())
 .then((productos) => {    
     productos.forEach((producto) => {         
-        productosTotal.push({ id: `${producto.id}`, nombre: `${producto.nombre}`, categoria: `${producto.categoria}`, cantidad: `${producto.cantidad}`, precio: `${producto.precio}`, img: `${producto.img}` }); 
+        productosTotal.push({ id: `${producto.id}`, nombre: `${producto.nombre}`, precio: `${producto.precio}`, img: `${producto.img}`, categoria: `${producto.categoria}`, cantidad: `${producto.cantidad}` }); 
             
-        const div = document.createElement("div")
-        div.classList.add("caja-carrito")
+        const div = document.createElement("div");
+        div.classList.add("caja-carrito");
         /* Desestructuro el objeto */
-        let { id, nombre, precio, img } = producto
+        let { id, nombre, precio, img } = producto;
         div.innerHTML = `
             <div class="card1" id= producto>
             <img class="card-img-top" src= "${img}" alt="imagen-producto">
@@ -106,19 +122,19 @@ fetch('../productos.json', {
 //-----------------Agregar al carrito----------------//
 //--------------------------------------------------//
 const agregarAlCarrito = (prodId) => {     
-    const existe = carro.some(prod => prod.id === prodId)    
+    const existe = carro.some(prod => prod.id == prodId)    
     if (existe) {
         const prod = carro.map(prod => {
             //------ Operador and -------//
-            prod.id === prodId && prod.cantidad++
+            prod.id == prodId && prod.cantidad++
         })
         
         
     }    
     else {           
-        const item = productosTotal.find((prod) => prod.id === prodId)        
+        const item = productosTotal.find((prod) => prod.id == prodId) 
         item.cantidad = 1
-        carro.push(item)
+        carro.push(item)       
 
     }
 
@@ -141,7 +157,7 @@ const agregarAlCarrito = (prodId) => {
 //------------------Eliminar producto----------------//
 //--------------------------------------------------//
 const eliminarDelCarrito = (prodId) => {
-    const item = carro.find((prod) => prod.id === prodId)    
+    const item = carro.find((prod) => prod.id == prodId)    
     const index = carro.indexOf(item)    
     carro[index].cantidad = 0
     //------ Elimino el producto del array--------//
@@ -163,12 +179,12 @@ const actualizarCarrito = () => {
         const div = document.createElement("div")
         div.className = ("caja-carrito")
         /* Desestructuro el objeto */
-        let { img, nombre, precio, stock, id } = prod
-        div.innerHTML = `<tr class="d-flex">
-            <th><img class="img-modal" src='${img}' alt="producto 1"></th>                    
-            <th class="prod-modal text-center" style="font-family:"great">${nombre}</th>
+        let { img, nombre, precio, cantidad, id } = prod
+        div.innerHTML = `<tr>
+            <td><img class="img-modal" src='${img}' alt="producto 1"></th>                    
+            <td class="prod-modal">${nombre}</th>
             <div id="precioCarrito" class="precio-carrito precio-modal">$${precio}</div>     
-            <th><input readonly = "readonly" id="cantidadCarrito" type="number" value="${stock}" class="cantidad-carrito"><th>                 
+            <td><input readonly = "readonly" id="cantidadCarrito" type="number" value="${cantidad}" class="cantidad-carrito"><th>                 
             <a class="boton-modal btn remover-carrito" onclick = "eliminarDelCarrito(${id})")"><img  src='imagenes/eliminar.png'></a>
         </tr>`
         contenedorCarrito.appendChild(div)
