@@ -81,18 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
 //--------------------------------------------------//
 const contenedorProductos = document.getElementById("card")
 let productosTotal = [] ;
-fetch('/productos.json', {
-})
-.then((response) =>response.json())
-.then((productos) => {    
-    productos.forEach((producto) => {         
-        productosTotal.push({ id: `${producto.id}`, nombre: `${producto.nombre}`, precio: `${producto.precio}`, img: `${producto.img}`, categoria: `${producto.categoria}`, cantidad: `${producto.cantidad}` }); 
-            
-        const div = document.createElement("div");
-        div.classList.add("caja-carrito");
-        /* Desestructuro el objeto */
-        let { id, nombre, precio, img } = producto;
-        div.innerHTML = `
+fetch('/productos.json')
+    .then((response) => response.json())
+    .then((productos) => {
+        productos.forEach((producto) => {
+            productosTotal.push({ id: `${producto.id}`, nombre: `${producto.nombre}`, precio: `${producto.precio}`, img: `${producto.img}`, categoria: `${producto.categoria}`, cantidad: `${producto.cantidad}` });
+
+            const div = document.createElement("div");
+            div.classList.add("caja-carrito");
+            /* Desestructuro el objeto */
+            let { id, nombre, precio, img } = producto;
+            div.innerHTML = `
             <div class="card1" id= producto>
             <img class="card-img-top" src= "${img}" alt="imagen-producto">
             <div class="card-body p-4">
@@ -105,16 +104,16 @@ fetch('/productos.json', {
             <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito"id="agregar${id}"href="#">Agregar<img src=imagenes/carrito.png> </a></div>
             </div>    
             </div>`;
-        contenedorProductos.appendChild(div)
-        let boton = document.getElementById(`agregar${producto.id}`)
-    
-        /* Si clickea en el boton depende de que id tiene el producto se lo agrega al carro */
-        boton.addEventListener("click", () => {
-            agregarAlCarrito(producto.id)
-        })
-    })
+            contenedorProductos.appendChild(div)
+            let boton = document.getElementById(`agregar${producto.id}`)
 
-})
+            /* Si clickea en el boton depende de que id tiene el producto se lo agrega al carro */
+            boton.addEventListener("click", () => {
+                agregarAlCarrito(producto.id)
+            })
+        })
+
+    })
 
 
 
