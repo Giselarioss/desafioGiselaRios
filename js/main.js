@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //--------------------------------------------------//
 const contenedorProductos = document.getElementById("card")
 let productosTotal = [] ;
-fetch('/productos.json')
+fetch('productos.json')
     .then((response) => response.json())
     .then((productos) => {
         productos.forEach((producto) => {
