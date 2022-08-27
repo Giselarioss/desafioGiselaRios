@@ -8,11 +8,24 @@
   font-family: "great";
   src: url("../font/GreatVibes-Regular.ttf");
 }
+@font-face {
+  font-family: "popi";
+  src: url("../font/Poppins-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "anto";
+  src: url("../font/Anthony Hunter.ttf");
+}
 .menu a {
-  font-size: 1.5rem;
+  padding-right: 20px;
+  font-size: 1.7rem;
+  color: rgb(20, 20, 20);
   font-weight: bolder;
   font-family: "great";
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+}
+.menu .search {
+  margin-left: 100px;
 }
 .menu .search form {
   font-family: "Times New Roman", Times, serif;
@@ -35,44 +48,53 @@
 }
 
 #card {
-  margin-left: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 20px;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  gap: 2rem;
+  margin: 2rem;
 }
-#card .card1 img {
+#card img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-#card .card1 h3 {
+#card .titulo {
+  margin-top: 0.5rem;
   font-family: "great";
   letter-spacing: 1px;
   font-size: 2rem;
+  text-align: center;
 }
-#card .card1 span {
+#card .precio {
   font-family: "Times New Roman", Times, serif;
+  color: rgb(88, 136, 139);
   font-weight: bolder;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
-#card .card1 .btn {
+#card .categoria {
+  font-weight: 0.9rem;
+  font-weight: bold;
+  color: rgb(148, 145, 145);
+}
+#card .btn {
   background-color: rgb(88, 136, 139);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bolder;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 2px solid rgb(0, 82, 86);
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 0 130px;
+}
+#card .btn:hover {
+  transform: scale(1.1);
 }
 
-.modal-border {
-  border: 2px solid rgb(0, 82, 86);
-  border-radius: 15px;
-}
-.modal-border #modal {
+#modal {
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: bolder;
   padding: 20px;
   max-height: 100%;
@@ -81,31 +103,77 @@
   width: 40%;
   right: 0;
   top: 0;
-  transition: all 0.5s ease;
   overflow-y: scroll;
   transition: all 0.5s ease;
 }
-.modal-border #modal h5 {
+#modal h5 {
   font-family: "great";
   font-size: 2rem;
   font-weight: bolder;
   letter-spacing: 2px;
 }
 
-.cantidad-carrito {
+.caja-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.caja-carrito .cantidad-carrito {
   width: 30px;
+  height: 20px;
+  border-radius: 5px;
   text-align: center;
 }
-
-.img-modal {
+.caja-carrito .img-modal {
   width: 150px;
-  padding-bottom: 10px;
-  padding-right: 15px;
+  margin: 10px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+.total .total-titulo {
+  font-size: 1.6rem;
+  font-family: "great";
+  padding-left: 20px;
+}
+.total .precio-total {
+  font-size: 1.1rem;
+  padding-right: 50px;
+}
+
+#vaciarCarrito {
+  color: rgb(0, 82, 86);
+  border-radius: 10px;
+  border: 1px solid rgb(0, 82, 86);
+  background-color: whitesmoke;
+}
+#vaciarCarrito:hover {
+  background-color: rgb(0, 82, 86);
+  color: white;
+  border-color: 1px solid white;
+  transform: scale(1.1);
+}
+
+#btnComprar {
+  color: rgb(0, 82, 86);
+  border-radius: 10px;
+  border: 1px solid rgb(0, 82, 86);
+  background-color: whitesmoke;
+}
+#btnComprar:hover {
+  background-color: rgb(0, 82, 86);
+  color: white;
+  border-color: 1px solid white;
+  transform: scale(1.1);
 }
 
 #home {
   width: 100%;
-  height: 600px;
+  height: 670px;
   padding-top: 150px;
   background-image: url(../imagenes/home.jpg);
   background-attachment: fixed;
@@ -127,13 +195,210 @@
   border-radius: 10% 39% 21% 45%/48% 61% 39% 52%;
 }
 #home div div h1 {
-  font-size: 3.2rem;
-  letter-spacing: 5px;
-  font-family: "great";
+  font-size: 4rem;
+  letter-spacing: 4px;
+  font-family: "anto";
 }
 #home div div p {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "popi";
+  font-size: 1.3rem;
+}
+
+.parrafo {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 5rem;
+  font-family: "anto";
+  background-color: rgba(128, 128, 128, 0.178);
+}
+
+.nosotros {
+  text-align: center;
+  font-family: "popi";
+  font-size: 2rem;
+  margin-top: 50px;
+  color: black;
+  font-weight: bold;
+  line-height: 70px;
+  background-color: rgba(128, 128, 128, 0.178);
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border-radius: 5px;
+}
+
+#contacto {
+  overflow: hidden;
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+}
+#contacto h1 {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  font-family: "anto";
+  letter-spacing: 4px;
+  padding: 20px;
+  font-size: 5rem;
+  color: black;
+  background-color: rgba(128, 128, 128, 0.178);
+}
+#contacto .contact2-flex {
+  max-width: 1200px;
+  padding: 20px;
+  border: 2px solid rgb(0, 82, 86);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "arial";
+  font-weight: bold;
+  font-size: 3rem;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+}
+#contacto .contact-form {
+  width: 500px;
+  letter-spacing: 4px;
+  color: rgb(0, 82, 86);
+  font-size: 2rem;
+}
+#contacto .contact-form .login-box {
+  padding: 30px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+#contacto .contact-form .login-box form a {
+  position: relative;
+  padding: 10px 15px;
+  color: black;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+#contacto .contact-form .login-box form a:hover {
+  background: grey;
+  color: rgb(0, 82, 86);
+  border-radius: 5px;
+}
+#contacto .contact-form .login-box .user-box {
+  position: relative;
+}
+#contacto .contact-form .login-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(0, 82, 86);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: rgb(0, 82, 86);
+  outline: none;
+  background: transparent;
+}
+#contacto .contact-form .login-box textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(0, 82, 86);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+}
+#contacto .contact-form .login-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(0, 82, 86);
+  pointer-events: none;
+  transition: 0.5s;
+}
+#contacto .contact-form .login-box input:focus ~ label,
+#contacto .contact-form .login-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: black;
+  font-size: 12px;
+}
+#contacto .contact-form .login-box .boton {
+  background-color: rgb(0, 82, 86);
+  font-size: 2rem;
+  font-family: "anto";
+  padding: 5px 180px;
+  border-radius: 10px;
+  color: white;
+}
+#contacto .contact-form .login-box .boton:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  overflow: hidden;
+  grid-area: footer;
+  background-color: #585858;
+}
+footer .footer-padre {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: start;
+  letter-spacing: 3px;
+}
+footer .footer-padre .footer-mail {
+  color: white;
+  font-family: "popi";
+  margin-right: 20px;
+}
+footer .footer-padre .footer-mail .footer-p1 {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+footer .footer-padre .footer-mail .footer-p2 {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+footer .footer-padre .footer-call {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 0.8rem;
+  font-family: "popi";
+  font-weight: bold;
+}
+footer .footer-padre .footer-call div img {
+  margin-top: 20px;
+  height: 30px;
+  margin-right: 20px;
+}
+footer .footer-padre .footer-call .footer-p2 {
+  color: whitesmoke;
+}
+footer .footer-padre .footer-call .footer-logo {
+  margin-top: 10px;
+}
+footer .footer2 {
+  background-color: rgb(0, 82, 86);
+  font-family: "regular";
   font-size: 1rem;
+  padding-top: 8px;
+}
+footer .footer2 a {
+  text-decoration: none;
+  color: white;
+}
+footer .footer2 a:hover {
+  color: whitesmoke;
+}
+footer .footer2 .copy {
+  margin-left: 100px;
+  color: whitesmoke;
 }
 
 /*# sourceMappingURL=style.css.map */

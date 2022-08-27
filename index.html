@@ -27,15 +27,15 @@
                                 aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse nav-position" id="navbarNavAltMarkup">
+                            <div class="collapse navbar-collapse nav-position justify-content-end" id="navbarNavAltMarkup">
                                 <div class="navbar-nav menu">
-                                    <a class="nav-link" href="#home">Inicio</a>
-                                    <a class="nav-link" href="#empresa">Empresa</a>
-                                    <a class="nav-link" href="#">Contacto</a>
-                                    <li class="dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#card" id="navbarDropdownMenuLink"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                                    <a class="nav-link" href="#home">Inicio</a>                                                                                                            
+                                    <div class="dropdown">
+                                        <a class="nav-link dropdown-toggle dropdown" id="navbarDropdownMenuLink"
+                                            role="button" data-bs-toggle="dropdown" href="productos.html">Productos</a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a class="dropdown-item filtrar-categoria" data-categoria="Sillon">Todos</a>
+                                            </li>
                                             <li><a class="dropdown-item filtrar-categoria" data-categoria="Sillon">Sillones</a>
                                             </li>
                                             <li><a class="dropdown-item filtrar-categoria" data-categoria="Silla">Sillas</a>
@@ -46,7 +46,8 @@
                                             <li><a class="dropdown-item filtrar-categoria" data-categoria="Banco">Puff</a></li>
         
                                         </ul>
-                                    </li>
+                                    </div>
+                                    <a class="nav-link" href="#contacto">Contacto</a>
                                     <div class="d-flex search">
                                         <form>
                                             <input class="form-control me-2" type="search" placeholder="Buscar"
@@ -73,11 +74,11 @@
                                                         </div>
                                                     </div>
                                 
-                                                    <div class="total d-flex">
-                                                        <div class="total-titulo">Total: </div>
-                                                        <div class="precio-total" id="precioTotal">$0</div>
+                                                    <div class="total">
+                                                        <p class="total-titulo">Total de la compra : </p>
+                                                        <p class="precio-total" id="precioTotal"> $0</p>
                                                     </div>
-                                                    <div>
+                                                    <div class="botones d-flex justify-content-center">
                                                         <button type="button" id="btnComprar" class="btn-comprar">Comprar</button>
                                                     
                                                         <button type="button" class="btn" id="vaciarCarrito">Vaciar Carrito</button>
@@ -102,22 +103,107 @@
             <div id="home">
                 <div class="text-center text-white inicio ">
                     <div>
-                        <h1 id=titulo class="display-4 fw-bolder">Muebles de diseño para tu hogar</h1>
+                        <h1 id=titulo>Muebles de diseño para tu hogar</h1>
                         <p id=parrafo class=" lead fw-normal text-white-50 mb-0">Renova tu hogar con muebles de alta calidad</p>
                     </div>
                 </div>
-            </div>
-            <!----------Seccion empresa------>
-            <section class="text-center container" id="empresa">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In molestiae adipisci iusto ea velit, provident sed, ab qui ut aliquam expedita nulla hic numquam. Laborum praesentium blanditiis illo cumque quidem?</section> 
+            </div>                
             
             <!---------Seccion comprar------>
-            <section class="py-5 container row row-cols-1 row-cols-sm-3 g-4 " id="card"></section>
+            <section>
+                <p class="parrafo">Productos</p>
+                <p class="nosotros container">Nuestro compromiso es mejorar tu experiencia con el diseño, el confort y la calidad de cada pieza que formará parte de tu espacio, por eso cuidamos los detalles y trabajamos en tu proyecto como si fuera nuestro.</p>
+                <div id="card"></div> 
+            </section>                      
             
         </main>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-        </footer>
+        <!-- seccion contacto-->
+        
+        <section class="contact-flex" id="contacto">
+            <h1 class="h1 text-center">Contactanos</h1>
+            <div class="contact2-flex container">
+                <div>
+                    <img src="imagenes/diseno.png" alt="diseño de muebles">
+                </div>
+                <div class="form">
+                    <div class="contact-form">
+                        <form class="login-box">
+                            <div class="user-box">                        
+                                <input type="text" id="nombre y apellido" required>
+                                <label for="nombre y appelido">Nombre</label>                       
+                            </div>                            
+                            
+                            <div class="user-box">                        
+                                <input type="email" name="mail" id="mail" required>
+                                <label for="mail">Mail</label>                        
+                            </div>
+                            <div class="user-box">
+                                <textarea id="mensaje" placeholder="Deje su mensaje" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <label for="mensaje"></label>
+                            </div>
+                            
+                            <a href="mailto:design@threedisolutions.com" target="_blank">
+                                
+                                <button class="boton" type="submit">Enviar</button>
+                            </a>
+                            
+                        </form>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-padre">
+                <div class="footer-mail">
+                    <p class="footer-p1">Escribinos : </p>
+                    <p class="footer-p2">Nos interesa conocer tu opinión</p>
+                    <p class="footer-p2"><a>design@mkmuebles.com</a></p>
+                </div>
+                <div class="footer-call">
+                    <div>
+                        <img src="imagenes/whatsapp.png" alt="Contactanos por whatsapp">
+                    </div>
+                    <div>
+                        <p class="footer-p2">Whatsapp :</p>
+                        <p>+54 352679034</p>
+                    </div>
+                </div>
+                <div class="footer-logo">
+                    <img src="logo/logo-footer.jpg" alt="logo de la empresa">
+                </div>                      
+            </div>            
+        </section> 
+        
+       
+        <section>
+            <div class="footer2">
+                <div class="container-fluid">
+                    <div class="row">        
+                        <div class="col-md-6 widget">
+                            <div class="widget-body">
+                                <p class="simplenav td-none">
+                                    <a href="index.html">inicio</a> |
+                                    <a href="#empresa">Nosotros</a> |                                    
+                                    <a href="#">Productos</a> |
+                                    <a href="#contacto">Contacto</a>
+                                </p>
+                            </div>
+                        </div>        
+                        <div class="col-md-6 widget">
+                            <div>
+                                <p class="text-right copy">
+                                    Copyright &copy; 2022, MK muebles. Designed by <a href="">G.R</a>
+                                </p>
+                            </div>
+                        </div>        
+                    </div> 
+                </div>
+            </div>
+        </section>
+    
+    </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

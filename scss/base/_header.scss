@@ -1,15 +1,18 @@
-.menu {
+.menu {    
     
     a {
-        font-size: 1.5rem;
+        padding-right: 20px;
+        font-size: 1.7rem;
+        color: rgb(20, 20, 20);
         font-weight: bolder;
         font-family: 'great';
-        letter-spacing: 2px;
+        letter-spacing: 3px;        
     }
 
-    .search {        
+    .search {  
+        margin-left: 100px;              
         form{            
-            font-family: 'Times New Roman', Times, serif
+            font-family: 'Times New Roman', Times, serif;            
         }
         button{
             font-family: 'great';            

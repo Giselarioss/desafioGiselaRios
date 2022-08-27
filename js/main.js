@@ -28,7 +28,7 @@ const compraProcesada = () => {
     }
     else {        
         Swal.fire({
-            title: "¡Su compra ha sido procesada!",
+            title: "¡Graias por tu compra!",
             iconColor: "rgb(0, 82, 86)",
             icon: "success",
             color: "black",
@@ -56,6 +56,7 @@ vaciarCarrito.addEventListener("click", function vaciar(){
         style: {
             background: "rgb(0, 82, 86)",            
             color: "white",
+            font: "anto"
         },
         close: true,
         gravity: "bottom",
@@ -86,18 +87,19 @@ fetch('productos.json')
     .then((productos) => {
         productos.forEach((producto) => {
             productosTotal.push({ id: `${producto.id}`, nombre: `${producto.nombre}`, precio: `${producto.precio}`, img: `${producto.img}`, categoria: `${producto.categoria}`, cantidad: `${producto.cantidad}` });
-
             const div = document.createElement("div");
             div.classList.add("caja-carrito");
             /* Desestructuro el objeto */
-            let { id, nombre, precio, img } = producto;
+            let { id, nombre, precio, img, categoria } = producto;
             div.innerHTML = `
             <div class="card1" id= producto>
-            <img class="card-img-top" src= "${img}" alt="imagen-producto">
-            <div class="card-body p-4">
-            <div class="producto text-center">
-            <h3 class="fw-bolder titulo">${nombre}</h3>    
-            <p class="precio">$${precio}</p>     
+            <img src= "${img}" alt="imagen-producto">
+            <div>
+            <div class="producto">
+            <h3 class="fw-bold titulo">${nombre}</h3>    
+            <p class="precio">$${precio}</p> 
+            <p class="categoria">Categoria: ${categoria}</p>  
+            <p class="categoria">Envio gratis</p>    
             </div>
             </div>    
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -138,7 +140,7 @@ const agregarAlCarrito = (prodId) => {
     }
 
     Toastify({
-        text: "Producto agregado a tu carrito",
+        text: "Nuevo producto agregado a tu carrito",
         duration: 1500,
         style: {            
             background: "rgb(0, 82, 86)",            
@@ -180,11 +182,11 @@ const actualizarCarrito = () => {
         /* Desestructuro el objeto */
         let { img, nombre, precio, cantidad, id } = prod
         div.innerHTML = `<tr>
-            <td><img class="img-modal" src='${img}' alt="producto 1"></th>                    
-            <td class="prod-modal">${nombre}</th>
-            <div id="precioCarrito" class="precio-carrito precio-modal">$${precio}</div>     
-            <td><input readonly = "readonly" id="cantidadCarrito" type="number" value="${cantidad}" class="cantidad-carrito"><th>                 
-            <a class="boton-modal btn remover-carrito" onclick = "eliminarDelCarrito(${id})")"><img  src='imagenes/eliminar.png'></a>
+            <td><input readonly = "readonly" id="cantidadCarrito" type="number" value="${cantidad}" class="cantidad-carrito"><td>
+            <td><img class="img-modal" src='${img}' alt="producto 1"></td>                    
+            <td class="nombre-modal">${nombre}</td>
+            <td id="precioCarrito" class="precio-carrito precio-modal">$${precio}</td>                             
+            <a class="remover-carrito " onclick = "eliminarDelCarrito(${id})" style="cursor: pointer"><img  src='imagenes/eliminar.png'></a>
         </tr>`
         contenedorCarrito.appendChild(div)
         //------------Guardar producto LocalStorage-----------//
