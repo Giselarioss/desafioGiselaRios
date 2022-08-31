@@ -58,12 +58,14 @@ carro.forEach((prod) => {
         <td >$${prod.precio}</td>       
         
     </tr> 
-    <p class="item-cuenta"> Total de la compra: $${(carro.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0))}</p>
     `;
     localStorage.setItem("carro", JSON.stringify(carro)) 
     
 })
 
+contenedorResumen.innerHTML += `
+<p class="item-cuenta"> Total de la compra: $${(carro.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0))}</p>
+`;
 
 
 
