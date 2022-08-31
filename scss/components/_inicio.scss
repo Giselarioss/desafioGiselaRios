@@ -8,24 +8,24 @@
     background-size: cover;
     div{        
         text-align: center;      
-        padding: 25px 10px;
-        max-width: 60%;
-        background-color: rgba(128, 128, 128, 0.966);
+        padding: 10px 10px;
+        width: 60%;
+        background-color: rgba(128, 128, 128, 0.822);
         border-radius:77% 43% 38% 22%/90% 51% 89% 50% ;
         div{
-            max-width: 100%;
+            width: 100%;
             text-align: center;      
-            padding: 25px 10px;            
+            padding: 15px 10px;            
             background-color: black;
             border-radius:10% 39% 21% 45%/48% 61% 39% 52%;
             h1{
-                font-size: 4rem;
+                font-size: 3.5rem;
                 letter-spacing: 4px;
                 font-family: 'anto';
             }
             p{
                 font-family: 'popi';
-                font-size: 1.3rem; 
+                font-size: 1rem; 
             }
         }
     }
@@ -33,7 +33,7 @@
 }
 
 .parrafo{
-    margin-top: 80px;
+    margin-top: 30px;
     text-align: center;
     font-size: 5rem;
     font-family: 'anto';
@@ -42,14 +42,13 @@
 .nosotros{    
     text-align: center;       
     font-family: 'popi';
-    font-size: 2rem;
-    margin-top: 50px;
+    font-size: 1.7rem;
+    margin-top: 10px;
     color: black;
     font-weight: bold;
     line-height: 70px;
-    background-color: rgba(128, 128, 128, 0.178);
-    margin-top: 80px;
-    margin-bottom: 80px;
+    background-color: rgba(128, 128, 128, 0.178);    
+    margin-bottom: 40px;
     border-radius: 5px
     
 }    

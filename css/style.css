@@ -29,6 +29,10 @@
 }
 .menu .search form {
   font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  max-width: 200px;
+  height: 37px;
 }
 .menu .search button {
   font-family: "great";
@@ -48,47 +52,48 @@
 }
 
 #card {
-  padding: 20px;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow: hidden;
-  gap: 2rem;
-  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
-#card img {
+#card .card1 {
+  width: 350px;
+}
+#card .card1 .img {
+  width: 350px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-#card .titulo {
+#card .card1 .titulo {
   margin-top: 0.5rem;
   font-family: "great";
   letter-spacing: 1px;
   font-size: 2rem;
   text-align: center;
 }
-#card .precio {
+#card .card1 .precio {
   font-family: "Times New Roman", Times, serif;
   color: rgb(88, 136, 139);
   font-weight: bolder;
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
-#card .categoria {
+#card .card1 .categoria {
   font-weight: 0.9rem;
   font-weight: bold;
   color: rgb(148, 145, 145);
 }
-#card .btn {
+#card .card1 .btn {
   background-color: rgb(88, 136, 139);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 1rem;
   font-weight: bolder;
   border-radius: 5px;
   border: 2px solid rgb(0, 82, 86);
-  padding: 0 130px;
+  padding: 0 100px;
 }
-#card .btn:hover {
+#card .card1 .btn:hover {
   transform: scale(1.1);
 }
 
@@ -182,30 +187,30 @@
 }
 #home div {
   text-align: center;
-  padding: 25px 10px;
-  max-width: 60%;
-  background-color: rgba(128, 128, 128, 0.966);
+  padding: 10px 10px;
+  width: 60%;
+  background-color: rgba(128, 128, 128, 0.822);
   border-radius: 77% 43% 38% 22%/90% 51% 89% 50%;
 }
 #home div div {
-  max-width: 100%;
+  width: 100%;
   text-align: center;
-  padding: 25px 10px;
+  padding: 15px 10px;
   background-color: black;
   border-radius: 10% 39% 21% 45%/48% 61% 39% 52%;
 }
 #home div div h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   letter-spacing: 4px;
   font-family: "anto";
 }
 #home div div p {
   font-family: "popi";
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .parrafo {
-  margin-top: 80px;
+  margin-top: 30px;
   text-align: center;
   font-size: 5rem;
   font-family: "anto";
@@ -215,14 +220,13 @@
 .nosotros {
   text-align: center;
   font-family: "popi";
-  font-size: 2rem;
-  margin-top: 50px;
+  font-size: 1.7rem;
+  margin-top: 10px;
   color: black;
   font-weight: bold;
   line-height: 70px;
   background-color: rgba(128, 128, 128, 0.178);
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   border-radius: 5px;
 }
 
@@ -233,12 +237,11 @@
   margin-top: 50px;
 }
 #contacto h1 {
-  padding-top: 60px;
+  padding-top: 40px;
   padding-bottom: 40px;
   font-family: "anto";
   letter-spacing: 4px;
-  padding: 20px;
-  font-size: 5rem;
+  font-size: 3.5rem;
   color: black;
   background-color: rgba(128, 128, 128, 0.178);
 }
@@ -255,6 +258,7 @@
   align-content: center;
   flex-wrap: nowrap;
   flex-direction: row-reverse;
+  margin-bottom: 40px;
 }
 #contacto .contact-form {
   width: 500px;
@@ -336,6 +340,12 @@
 }
 #contacto .contact-form .login-box .boton:hover {
   transform: scale(1.1);
+}
+
+.h1 {
+  font-family: "anto";
+  padding-right: 20px;
+  font-size: 3.5rem;
 }
 
 footer {

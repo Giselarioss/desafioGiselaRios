@@ -9,41 +9,8 @@ let botonComprar = document.getElementById("btnComprar")
 let vaciarCarrito = document.getElementById("vaciarCarrito")
 
 
-//---------------------------------------------------//
-//------------------Boton comprar-------------------//
-//--------------------------------------------------//
-const compraProcesada = () => {
 
-    if (carro.length == 0) {        
-        Swal.fire({
-            title: "Error",
-            titleText: "Tienes que agregar productos al carrito",
-            iconColor: "rgb(0, 82, 86)",
-            icon: "error",
-            color: "black",
-            confirmButtonText: "OK",
-            confirmButtonColor: "rgb(0, 82, 86)",
-            padding: "0.3rem 0.3rem"            
-        })
-    }
-    else {        
-        Swal.fire({
-            title: "¡Graias por tu compra!",
-            iconColor: "rgb(0, 82, 86)",
-            icon: "success",
-            color: "black",
-            confirmButtonText: "OK",
-            confirmButtonColor: "rgb(0, 82, 86)",
-            padding: "0.3rem 0.3rem"
-            
-        })
-    }
-    //--------- Spread del Carrito------------//
-    console.log(...carro)
-    carro.length = 0
-    actualizarCarrito()
-}
-botonComprar.addEventListener("click", compraProcesada)
+
 
 //--------------------------------------------------//
 //---------------Boton vaciar carrito---------------//
@@ -80,8 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
 //---------------------------------------------------//
 //-----------------------Card-----------------------//
 //--------------------------------------------------//
+
+
+
+
 const contenedorProductos = document.getElementById("card")
-let productosTotal = [] ;
+let productosTotal = [];
 fetch('productos.json')
     .then((response) => response.json())
     .then((productos) => {
@@ -93,18 +64,16 @@ fetch('productos.json')
             let { id, nombre, precio, img, categoria } = producto;
             div.innerHTML = `
             <div class="card1" id= producto>
-            <img src= "${img}" alt="imagen-producto">
-            <div>
-            <div class="producto">
-            <h3 class="fw-bold titulo">${nombre}</h3>    
-            <p class="precio">$${precio}</p> 
-            <p class="categoria">Categoria: ${categoria}</p>  
-            <p class="categoria">Envio gratis</p>    
-            </div>
-            </div>    
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito"id="agregar${id}"href="#">Agregar<img src=imagenes/carrito.png> </a></div>
-            </div>    
+                <img class="img" src= "${img}" alt="imagen-producto">                
+                <div class="producto">
+                    <h3 class="fw-bold titulo">${nombre}</h3>    
+                    <p class="precio">$${precio}</p> 
+                    <p class="categoria">Categoria: ${categoria}</p>  
+                    <p class="categoria">Envio gratis</p>    
+                </div>                   
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito"id="agregar${id}"href="#">Agregar<img src=imagenes/carrito.png> </a></div>
+                </div>    
             </div>`;
             contenedorProductos.appendChild(div)
             let boton = document.getElementById(`agregar${producto.id}`)
@@ -116,9 +85,6 @@ fetch('productos.json')
         })
 
     })
-
-
-
 //---------------------------------------------------//
 //-----------------Agregar al carrito----------------//
 //--------------------------------------------------//
@@ -201,4 +167,59 @@ const actualizarCarrito = () => {
    //--------------------------------------------------//
     precioTotal.innerText = "$"+ carro.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
 }
+
+//---------------------------------------------------//
+//------------------Buscador------------------------//
+//--------------------------------------------------//
+
+const buscador = document.getElementById("buscar");
+const resultadoBuscar = document.getElementById("botonBuscar")
+
+const buscar = () =>{  
+    const contenedorProductos = document.getElementById("card")
+    let productosTotal = [];    
+    contenedorProductos.innerHTML = ''
+    let texto = buscador.value.toLowerCase();
+    
+    fetch('productos.json')
+        .then((response) => response.json())
+        .then((productos) => {            
+            productos.forEach((producto) => {
+                productosTotal.push({ id: `${producto.id}`, nombre: `${producto.nombre}`, precio: `${producto.precio}`, img: `${producto.img}`, categoria: `${producto.categoria}`, cantidad: `${producto.cantidad}` });                
+                const div = document.createElement("div");
+                div.classList.add("caja-carrito");
+                
+                let productoBuscar = producto.nombre.toLowerCase();
+                if(productoBuscar.indexOf(texto) !== -1){
+                    let { id, nombre, precio, img, categoria } = producto;
+                    div.innerHTML +=`                    
+                    <div class="card1" id= producto>
+                    <img class="img"src= "${img}" alt="imagen-produto">                
+                    <div class="producto">
+                    <h3 class="fw-bold titulo">${nombre}</h3>    
+                    <p class="precio">$${precio}</p> 
+                    <p class="categoria">Categoria: ${categoria}</p>  
+                    <p class="categoria">Envio gratis</p>    
+                    </div>                   
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito"id="agregar${id}"href="#">Agregar<img src=imagenes/carrito.png> </a></div>
+                    </div>    
+                    </div>`;   
+                    contenedorProductos.appendChild(div)
+                    let boton = document.getElementById(`agregar${producto.id}`)
+
+                     /* Si clickea en el boton depende de que id tiene el producto se lo agrega al carro */
+                    boton.addEventListener("click", () => {
+                    agregarAlCarrito(producto.id)                                                         
+                    })
+                }    
+
+                
+            }) 
+        })
+    
+}    
+buscador.addEventListener('keyup', buscar);
+
+
 

@@ -12,7 +12,11 @@
     .search {  
         margin-left: 100px;              
         form{            
-            font-family: 'Times New Roman', Times, serif;            
+            font-family: 'Times New Roman', Times, serif;                       
+            font-size: 1.2rem;
+            font-weight: bolder;            
+            max-width: 200px;
+            height: 37px;                   
         }
         button{
             font-family: 'great';            
@@ -31,6 +35,4 @@
             }
         }
     }
-
-
 }
