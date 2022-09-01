@@ -6,11 +6,12 @@
         <meta name="description" content="" />
         <meta name="author" content="" />            
         <!-- Bootstrap icons-->
+        <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">        
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <!------ CSS --------->
         <link href="css/style.css" rel="stylesheet" />
         <title>Muebles de diseño</title>   
     </head>
@@ -30,25 +31,115 @@
                 <h1 class="h1">Resumen de compra</h1>    
             </section>
 
-            <section>                
-                    <table class="table table-hover">                    
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Muestra</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Precio</th>
-                                                                
-                            </tr>
-                        </thead>
-                        <tbody id="resumenCompra">                            
-                            
-                        </tbody>                    
-                    </table>                   
-                 
-                
-            </section>   
+            <section>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Muestra</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>            
+                        </tr>
+                    </thead>
+                    <tbody id="resumenCompra">
+                     <!---------agrego tabla para la compra con js------->
+                    </tbody>
+                </table>
+            </section>
+            <!-----------Modo de pago---------->
+
+            <div class="contenedor">
+                <!---------------Tarjeta------------------>
+                <section class="tarjeta" id="tarjeta">
+                    <div class="delantera">
+                        <div class="logo-marca" id="logo-marca">
+                            <!--pongo img con JS-->
+                        </div>
+                        <img src="imagenes/chip.png" alt="chip de la tarjeta" class="chip">
+                        <div class="datos">
+                            <div class="grupo" id="numero" >
+                                <p class="label">Numero tarjeta</p>
+                                <p class="numero">#### #### #### ####</p>
+                            </div>
+                            <div class="flexbox">
+                                <div class="grupo" id="nombre">
+                                    <p class="label">Nombre tarjeta</p>
+                                    <p class="nombre">Juan Perez Rodriguez</p>
+                                </div>
+
+                                <div class="grupo" id="expiracion">
+                                    <p class="label">Expiracion</p>
+                                    <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trasera">
+                        <div class="barra-magnetica"></div>
+                        <div class="datos">
+                            <div class="grupo" id="firma">
+                                <p class="label">Firma</p>
+                                <div class="firma"><p></p></div>
+                            </div>
+                            <div class="grupo" id="ccv">
+                                <p class="label">CCV</p>
+                                <p class="ccv"></p>
+                            </div>
+                        </div>
+                        <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+                        <a href="#" class="link-banco">www.banco.com</a>
+                    </div>
+                </section>
+                <!---Contenedor boton abrir formulario---->
+                <div class="contenedor-btn">
+                    <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!---------------Formulario--------------->
+                <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+                    <div class="grupo">
+                        <label for="inputNumero">Número Tarjeta</label>
+                        <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                    </div>
+                    <div class="grupo">
+                        <label for="inputNombre">Nombre</label>
+                        <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+                    </div>
+                    <div class="flexbox">
+                        <div class="grupo expira">
+                            <label for="selectMes">Expiracion</label>
+                            <div class="flexbox">
+                                <div class="grupo-select">
+                                    <select name="mes" id="selectMes">
+                                        <option disabled selected>Mes</option>
+                                    </select>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                                <div class="grupo-select">
+                                    <select name="year" id="selectYear">
+                                        <option disabled selected>Año</option>
+                                    </select>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="grupo ccv">
+                            <label for="inputCCV">CCV</label>
+                            <input type="text" id="inputCCV" maxlength="3">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </form>
+
+            </div>
+
+
+
+
+
             
             
             <section>
@@ -57,6 +148,7 @@
             </section>      
         
         </main>
+
 
         <footer>
             <section class="footer-padre">
@@ -109,9 +201,9 @@
         
         </footer>
             <!-- Bootstrap core JS-->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>            
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
             <!-- JS-->        
             <script src="js/miCompra.js"></script>
         </body>

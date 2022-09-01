@@ -209,18 +209,17 @@
   font-size: 1rem;
 }
 
-.parrafo {
+#productos .parrafo {
   margin-top: 30px;
   text-align: center;
   font-size: 5rem;
   font-family: "anto";
   background-color: rgba(128, 128, 128, 0.178);
 }
-
-.nosotros {
+#productos .nosotros {
   text-align: center;
   font-family: "popi";
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   margin-top: 10px;
   color: black;
   font-weight: bold;
@@ -348,8 +347,242 @@
   font-size: 3.5rem;
 }
 
+.contenedor {
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contenedor .tarjeta {
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+  color: #fff;
+  transition: 0.3s ease all;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  z-index: 2;
+}
+.contenedor .tarjeta:active {
+  transform: rotateY(180deg);
+}
+.contenedor .tarjeta > div {
+  padding: 30px;
+  border-radius: 15px;
+  min-height: 315px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+}
+.contenedor .tarjeta .delantera {
+  width: 100%;
+  background-image: url(../imagenes/bgtarjeta.png);
+  background-size: cover;
+}
+.contenedor .tarjeta .delantera .logo-marca {
+  text-align: right;
+  min-height: 50px;
+}
+.contenedor .tarjeta .delantera img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 80px;
+}
+.contenedor .tarjeta .delantera .chip {
+  width: 100%;
+  max-width: 50px;
+  margin-bottom: 20px;
+}
+.contenedor .tarjeta .delantera .label {
+  font-size: 16px;
+  color: #7d8994;
+  margin-bottom: 5px;
+}
+.contenedor .tarjeta .delantera .numero,
+.contenedor .tarjeta .delantera .nombre,
+.contenedor .tarjeta .delantera .expiracion {
+  color: white;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.contenedor .tarjeta .delantera .flexbox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.contenedor .tarjeta .trasera {
+  background: url(../imagenes/bgtarjeta.png);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.contenedor .tarjeta .trasera .barra-magnetica {
+  height: 40px;
+  background: black;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+.contenedor .tarjeta .trasera .datos {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.contenedor .tarjeta .trasera .datos p {
+  margin-bottom: 5px;
+}
+.contenedor .tarjeta .trasera .datos #firma {
+  width: 70%;
+}
+.contenedor .tarjeta .trasera .datos #firma .firma {
+  height: 40px;
+  background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+}
+.contenedor .tarjeta .trasera .datos #firma .firma p {
+  line-height: 40px;
+  font-family: "Liu Jian Mao Cao", cursive;
+  color: black;
+  font-size: 30px;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+.contenedor .tarjeta .trasera .datos #ccv {
+  width: 20%;
+}
+.contenedor .tarjeta .trasera .datos #ccv .ccv {
+  background: white;
+  height: 40px;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+.contenedor .tarjeta .trasera .leyenda {
+  font-size: 14px;
+  line-height: 24px;
+}
+.contenedor .tarjeta .trasera .link-banco {
+  font-size: 14px;
+  color: white;
+}
+.contenedor .btn-abrir-formulario {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 20px;
+  background: #2364d2;
+  color: white;
+  position: relative;
+  top: -25px;
+  z-index: 3;
+  border-radius: 100%;
+  box-shadow: -5px 4px 8px rga(24, 56, 182, 0.4);
+  padding: 5px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+.contenedor .btn-abrir-formulario:hover {
+  background: #1850b1;
+}
+.contenedor .btn-abrir-formulario.active {
+  transform: rotate(45deg);
+}
+.contenedor .formulario-tarjeta {
+  background: #fff;
+  width: 100%;
+  max-width: 700px;
+  padding: 150px 30px 30px 30px;
+  border-radius: 10px;
+  position: relative;
+  top: -150px;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 0.3s ease-out;
+}
+.contenedor .formulario-tarjeta.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.contenedor .formulario-tarjeta label {
+  display: block;
+  color: #7d8994;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.contenedor .formulario-tarjeta input,
+.contenedor .formulario-tarjeta select,
+.contenedor .formulario-tarjeta .btn-enviar {
+  border: 2px solid #ced6e0;
+  font-size: 18px;
+  height: 50px;
+  width: 100%;
+  padding: 5px 12px;
+  transition: 0.3s ease all;
+  border-radius: 5px;
+}
+.contenedor .formulario-tarjeta input:hover,
+.contenedor .formulario-tarjeta select:hover {
+  border: 2px solid #93bded;
+}
+.contenedor .formulario-tarjeta input:focus,
+.contenedor .formulario-tarjeta select:focus {
+  outline: rgb(4, 4, 4);
+  box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+}
+.contenedor .formulario-tarjeta input {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.contenedor .formulario-tarjeta .flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+.contenedor .formulario-tarjeta .expira {
+  width: 100%;
+}
+.contenedor .formulario-tarjeta .ccv {
+  min-width: 100px;
+}
+.contenedor .formulario-tarjeta .grupo-select {
+  width: 100%;
+  margin-right: 15px;
+  position: relative;
+}
+.contenedor .formulario-tarjeta .grupo-select i {
+  position: absolute;
+  color: #CED6E0;
+  top: 18px;
+  right: 15px;
+  transition: 0.3s ease all;
+}
+.contenedor .formulario-tarjeta .grupo-select:hover {
+  color: #93bfed;
+}
+.contenedor .formulario-tarjeta select {
+  -webkit-appearance: none;
+}
+.contenedor .formulario-tarjeta .btn-enviar {
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  color: #fff;
+  background: #2364d2;
+  box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+  cursor: pointer;
+}
+.contenedor .formulario-tarjeta .btn-enviar:hover {
+  background: #1850b1;
+}
+
 footer {
-  overflow: hidden;
   grid-area: footer;
   background-color: #585858;
 }
@@ -359,11 +592,11 @@ footer .footer-padre {
   align-items: center;
   justify-content: space-around;
   text-align: start;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 footer .footer-padre .footer-mail {
   color: white;
-  font-family: "popi";
+  font-family: "regular";
   margin-right: 20px;
 }
 footer .footer-padre .footer-mail .footer-p1 {
@@ -371,7 +604,7 @@ footer .footer-padre .footer-mail .footer-p1 {
   font-size: 0.8rem;
 }
 footer .footer-padre .footer-mail .footer-p2 {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 footer .footer-padre .footer-call {
@@ -379,7 +612,7 @@ footer .footer-padre .footer-call {
   align-items: center;
   color: white;
   font-size: 0.8rem;
-  font-family: "popi";
+  font-family: "regular";
   font-weight: bold;
 }
 footer .footer-padre .footer-call div img {

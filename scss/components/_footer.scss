@@ -1,5 +1,4 @@
-footer {
-    overflow: hidden;
+footer {    
     grid-area: footer;
     background-color: #585858;    
     .footer-padre { 
@@ -8,17 +7,17 @@ footer {
         align-items: center;
         justify-content: space-around;        
         text-align: start;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         .footer-mail{
             color: white;            
-            font-family: 'popi';
+            font-family: 'regular';
             margin-right: 20px;            
             .footer-p1{                 
                 font-weight: bold;             
                 font-size: 0.8rem;
             }  
             .footer-p2{
-                font-size: 0.7rem;
+                font-size: 0.8rem;
                 font-weight: bold; 
             }
                    
@@ -28,7 +27,7 @@ footer {
             align-items: center;                 
             color: white;
             font-size: 0.8rem;
-            font-family: 'popi';
+            font-family: 'regular';
             font-weight: bold;
             div img{                
                 margin-top: 20px;
