@@ -1,17 +1,58 @@
+.h2,
 .h1 {
+    width: 340px;
+    height: 40px;
     font-family: 'anto';    
     padding-right: 20px;
-    font-size: 3.5rem;    
-
+    font-size: 2rem; 
+    padding-left: 50px;
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px; 
+    color: black; 
+    background-color: grey;  
+    border-radius: 95% 5% 80% 20% / 40% 54% 46% 60%;
+    box-shadow: 2px 7px 20px -5px rgba(38, 63, 59, 0.788);
 }
-.contenedor{
-    width: 90%;
+
+.table-hover{
+    
+    th{
+        font-family:  'Times New Roman';
+        font-size: 1.2rem;
+        font-weight: bolder;        
+    }
+    td{
+        font-family: 'popi';
+        font-weight: bold;
+        font-size: 0.9rem;
+        .prod-id{
+            width: 50px;
+        }
+    }
+    
+    .item-cuenta{    
+        border-radius: 10px;
+        padding: 0 50px;
+        font-weight: bold;
+        margin-top: 70px;
+        font-size: 1.2rem;
+        font-family: 'popi';
+        background-color: rgba(128, 128, 128, 0.521);
+    }     
+}
+
+.contenedor {
+    background: rgba(128, 128, 128, 0.158);
+	width: 90%;
 	max-width: 1000px;
 	padding: 40px 20px;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: center;    
+    
+/* ---------- Estilos Generales de las Tarjetas ----------*/
     .tarjeta {
         width: 100%;
         max-width: 550px;
@@ -22,157 +63,159 @@
         transform-style: preserve-3d;
         cursor: pointer;
         z-index: 2;
-    
-        &:active {
+        &.active {
             transform: rotateY(180deg);
         }
-        &>div {
+        > div {
             padding: 30px;
             border-radius: 15px;
             min-height: 315px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+            box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
+            padding-bottom: 10px;
         }
-//------------------------TARJETA DELANTERA--------------------------------//        
-        .delantera{
+        /* ---------- Tarjeta Delantera ----------*/
+        .delantera {
             width: 100%;
-            background-image: url(../imagenes/bgtarjeta.png);
+            background: url(../imagenes/bgtarjeta.png);
             background-size: cover;
-            .logo-marca{
+            .logo-marca {
                 text-align: right;
                 min-height: 50px;
-            }    
-            & img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                max-width: 80px;
-            }           
-            .chip{
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    max-width: 80px;
+                }
+            }
+            .chip {
                 width: 100%;
                 max-width: 50px;
                 margin-bottom: 20px;
             }
-            .label{
+            .label {
                 font-size: 16px;
                 color: #7d8994;
                 margin-bottom: 5px;
             }
             .numero,
             .nombre,
-            .expiracion{
-                color:white;
+            .expiracion {
+                color: #fff;
                 font-size: 22px;
-                text-transform: uppercase;                
+                text-transform: uppercase;
             }
-            .flexbox{
+            .flexbox {
                 display: flex;
                 justify-content: space-between;
                 margin-top: 20px;
             }
         }
-        
-//------------------------TARJETA TRASERA--------------------------------//        
-        .trasera{
+        /* ---------- Tarjeta Trasera ----------*/
+        .trasera {
             background: url(../imagenes/bgtarjeta.png);
             background-size: cover;
             position: absolute;
             top: 0;
             transform: rotateY(180deg);
-            backface-visibility: hidden;
-            .barra-magnetica{
+            backface-visibility: hidden;            
+            .barra-magnetica {
                 height: 40px;
-                background:black;
+                background: #000;
                 width: 100%;
                 position: absolute;
                 top: 30px;
                 left: 0;
             }
-            .datos{
+            .datos {
                 margin-top: 60px;
                 display: flex;
                 justify-content: space-between;
-                p{
+                p {
                     margin-bottom: 5px;
                 }
-                #firma{
+                #firma {
                     width: 70%;
-                    .firma{
+                    .firma {
                         height: 40px;
-                        background: repeating-linear-gradient(skyblue 0, skyblue 5px,orange 5px, orange 10px);
-                        p{
+                        background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+                        p {
                             line-height: 40px;
                             font-family: 'Liu Jian Mao Cao', cursive;
-                            color: black;
+                            color: #000;
                             font-size: 30px;
                             padding: 0 10px;
-                            text-transform: capitalize;                            
+                            text-transform: capitalize;
                         }
+                        
                     }
                 }
-                #ccv{
+                #ccv {
                     width: 20%;
-                    .ccv{
-                        background: white;
+                    .ccv {
+                        background: #fff;
                         height: 40px;
-                        color: black;
+                        color: #000;
                         padding: 10px;
                         text-align: center;
                     }
                 }
             }
-            .leyenda{
+            .leyenda {
                 font-size: 14px;
                 line-height: 24px;
             }
-            .link-banco{
+            .link-banco {
                 font-size: 14px;
-                color: white;
+                color: #fff;
             }
         }
-    }
-    .btn-abrir-formulario{
+    }     
+    /* ---------- Contenedor Boton ----------*/
+    .contenedor-btn .btn-abrir-formulario {
         width: 50px;
         height: 50px;
         font-size: 20px;
         line-height: 20px;
-        background: #2364d2;
-        color: white;
+        background: rgb(0, 82, 86);
+        color: #fff;
         position: relative;
         top: -25px;
         z-index: 3;
         border-radius: 100%;
-        box-shadow: -5px 4px 8px rga(24,56,182,0.4);
+        box-shadow: -5px 4px 8px black;
         padding: 5px;
         transition: all .2s ease;
         border: none;
         cursor: pointer;
-        &:hover{
-            background: #1850b1;            
+        &:hover {
+            background: rgb(1, 124, 131);
         }
-        
-        &.active{
+        &.active {
             transform: rotate(45deg);
-        }
+        }    
     }
-//------------------------FORMULARIO TARJETA-----------------------------//  
+        
+    /* ---------- Formulario Tarjeta ----------*/
     .formulario-tarjeta {
+        font-family: 'popi';
         background: #fff;
         width: 100%;
         max-width: 700px;
-        padding: 150px 30px 30px 30px;
+        padding: 150px 30px 30px 5px;
         border-radius: 10px;
         position: relative;
         top: -150px;
         z-index: 1;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: clip-path .3s ease-out;
-        &.active{
+        &.active {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
-        label{
+        label {
             display: block;
             color: #7d8994;
             margin-bottom: 5px;
@@ -180,8 +223,8 @@
         }
         input,
         select,
-        .btn-enviar{
-            border: 2px solid #ced6e0;
+        .btn-enviar {
+            border: 2px solid #CED6E0;
             font-size: 18px;
             height: 50px;
             width: 100%;
@@ -190,29 +233,29 @@
             border-radius: 5px;
         }
         input:hover,
-        select:hover{
-            border: 2px solid #93bded;
+        select:hover {
+            border: 2px solid rgba(2, 123, 129, 0.671);
         }
         input:focus,
-        select:focus{
+        select:focus {
             outline: rgb(4,4,4);
             box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
         }
-        input{
+        input {
             margin-bottom: 20px;
             text-transform: uppercase;
         }
-        .flexbox{
+        .flexbox {
             display: flex;
             justify-content: space-between;
         }
-        .expira{
+        .expira {
             width: 100%;
         }
-        .ccv{
+        .ccv {
             min-width: 100px;
         }
-        .grupo-select{
+        .grupo-select {
             width: 100%;
             margin-right: 15px;
             position: relative;
@@ -223,25 +266,35 @@
                 right: 15px;
                 transition: .3s ease all;
             }
-            &:hover{
+            &:hover i {
                 color: #93bfed;
             }
         }
-        select{
+        select {
             -webkit-appearance: none;
         }
-        .btn-enviar {
-            border: none;
-            padding: 10px;
-            font-size: 22px;
-            color: #fff;
-            background: #2364d2;
-            box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
-            cursor: pointer;
-            &:hover{
-                background: #1850b1;
+        
+    } 
+    .button{
+        font-family: 'anto';
+        font-size: 1.8rem;        
+        margin-top: 10px;
+        display: flex;
+        width: 80%;
+        align-items: center;
+        justify-content: space-evenly;
+        .btn-comprar{
+            border-radius: 10px;
+            border: 1px solid  rgba(77, 131, 121, 0.788);
+            background-color: rgba(0, 113, 128, 0.74);
+            padding:0 70px;
+            box-shadow: 2px 7px 20px -5px rgba(26, 43, 40, 0.788);            
+            &:hover {            
+                transform: scale(1.1);
+                color: white;
             }
         }
     }
 }
+
 

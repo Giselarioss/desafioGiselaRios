@@ -11,7 +11,6 @@ let vaciarCarrito = document.getElementById("vaciarCarrito")
 
 
 
-
 //--------------------------------------------------//
 //---------------Boton vaciar carrito---------------//
 //--------------------------------------------------//
@@ -63,7 +62,7 @@ fetch('productos.json')
             /* Desestructuro el objeto */
             let { id, nombre, precio, img, categoria } = producto;
             div.innerHTML = `
-            <div class="card1" id= producto>
+            <div class="card1" id= producto data-aos="fade-up">
                 <img class="img" src= "${img}" alt="imagen-producto">                
                 <div class="producto">
                     <h3 class="fw-bold titulo">${nombre}</h3>    
@@ -193,7 +192,7 @@ const buscar = () =>{
                 if(productoBuscar.indexOf(texto) !== -1){
                     let { id, nombre, precio, img, categoria } = producto;
                     div.innerHTML +=`                    
-                    <div class="card1" id= producto>
+                    <div class="card1" id= producto data-aos="fade-up">
                     <img class="img"src= "${img}" alt="imagen-produto">                
                     <div class="producto">
                     <h3 class="fw-bold titulo">${nombre}</h3>    

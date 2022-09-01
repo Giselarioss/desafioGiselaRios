@@ -9,32 +9,19 @@ let botonComprar = document.getElementById("btnComprar");
 //---------------------------------------------------//
 //------------------Boton comprar-------------------//
 //--------------------------------------------------//
-const compraProcesada = () => {
-
-    if(carro.length == 0) {        
+const compraProcesada = () => {    
+    if (carro.length != 0){       
         Swal.fire({
-            title: "Error",
-            titleText: "No has seleccionado ningún producto",
-            iconColor: "red",
-            icon: "error",
-            color: "black",
-            confirmButtonText: "OK",
-            confirmButtonColor: "black",
-            padding: "1rem 0.3rem"
-        })
-        
-    }
-    else {       
-        Swal.fire({
-            title: "¡Su compra ha sido procesada!",
-            iconColor: "#0263a0",
+            title: "¡Gracias por tu compra!",
+            iconColor: "rgb(0, 82, 86)",
             icon: "success",
             color: "black",
             confirmButtonText: "OK",
-            confirmButtonColor: "black",
+            confirmButtonColor: "rgb(0, 82, 86)",
             padding: "1rem 0.3rem"
-        })    
-        
+			
+        })   
+
         localStorage.removeItem("carro", JSON.stringify(carro))       
     }    
     console.log(...carro);
@@ -51,11 +38,10 @@ botonComprar.addEventListener("click", compraProcesada);
 carro.forEach((prod) => {
     contenedorResumen.innerHTML += `
     <tr>
-        <th scope="row">${prod.id}</th>
-        <td><img src= "${prod.img}" alt="imagen-producto" style="width:150px"></td>
-        <td >${prod.nombre}</td>
-        <td >${prod.cantidad}</td>
-        <td >$${prod.precio}</td>       
+        <td><img src= "${prod.img}" alt="imagen-producto" style="width:150px"></td>        
+        <td class:"prod-nombre">${prod.nombre}</td>
+        <td class:"prod-cantidad">${prod.cantidad}</td>
+        <td class:"prod-precio">$${prod.precio}</td>       
         
     </tr> 
     `;
@@ -64,7 +50,7 @@ carro.forEach((prod) => {
 })
 
 contenedorResumen.innerHTML += `
-<p class="item-cuenta"> Total de la compra: $${(carro.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0))}</p>
+<p class="item-cuenta"> Total a pagar: $${(carro.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0))}</p>
 `;
 
 
@@ -84,15 +70,15 @@ const actualizarCarrito = () => {
 //--------------------------------------------------//
 
 const tarjeta = document.querySelector('#tarjeta'),
-	  btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
-	  formulario = document.querySelector('#formulario-tarjeta'),
-	  numeroTarjeta = document.querySelector('#tarjeta .numero'),
-	  nombreTarjeta = document.querySelector('#tarjeta .nombre'),
-	  logoMarca = document.querySelector('#logo-marca'),
-	  firma = document.querySelector('#tarjeta .firma p'),
-	  mesExpiracion = document.querySelector('#tarjeta .mes'),
-	  yearExpiracion = document.querySelector('#tarjeta .year'),
-	  ccv = document.querySelector('#tarjeta .ccv');
+	btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
+	formulario = document.querySelector('#formulario-tarjeta'),
+	numeroTarjeta = document.querySelector('#tarjeta .numero'),
+	nombreTarjeta = document.querySelector('#tarjeta .nombre'),
+    logoMarca = document.querySelector('#logo-marca'),
+	firma = document.querySelector('#tarjeta .firma p'),
+	mesExpiracion = document.querySelector('#tarjeta .mes'),
+	yearExpiracion = document.querySelector('#tarjeta .year'),
+	ccv = document.querySelector('#tarjeta .ccv');
 
 // * Volteamos la tarjeta para mostrar el frente.
 const mostrarFrente = () => {

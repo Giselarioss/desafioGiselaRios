@@ -10,7 +10,8 @@
     right: 0;
     top: 0;
     overflow-y: scroll;
-    transition: all 0.5s ease;
+    transition: all .4s ease;
+    position: fixed;
     h5 {
         font-family: 'great';
         font-size: 2rem;
@@ -51,30 +52,38 @@
     
 
 }
-#vaciarCarrito{       
-    color: rgb(0, 82, 86);
-    border-radius: 10px;
-    border: 1px solid rgb(0, 82, 86);
-    background-color: whitesmoke;
-    &:hover {
-        background-color: rgb(0, 82, 86);
+.botones{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    text-align: center;    
+    margin: 0px 10px;      
+    font-family: 'popi';  
+    #vaciarCarrito{  
+        align-items: center;  
+        width: 40%;
+        height: 30px;   
         color: white;
-        border-color: 1px solid white;        
-        transform: scale(1.1);
-        
+        margin-left: 20px;
+        padding-top: 0px;
+        border-radius: 10px;        
+        background-color: rgb(0, 82, 86); 
+        font-size: 0.8rem;         
+        &:hover {       
+            transform: scale(1.1);
+            
+        }
+    }
+    #btnComprar{ 
+        font-size: 0.8rem;  
+        width: 40%;
+        height: 30px; 
+        border-radius: 10px;       
+        &:hover {            
+            transform: scale(1.1);
+        }
     }
 }
-#btnComprar{   
-    color: rgb(0, 82, 86);
-    border-radius: 10px;
-    border: 1px solid rgb(0, 82, 86);
-    background-color: whitesmoke;
-    &:hover {
-        background-color: rgb(0, 82, 86);
-        color: white;
-        border-color: 1px solid white;
-        transform: scale(1.1);
-    }
-}
+
 
 
