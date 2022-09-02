@@ -71,7 +71,7 @@ fetch('productos.json')
                     <p class="categoria">Envio gratis</p>    
                 </div>                   
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito"id="agregar${id}"href="#">Agregar<img src=imagenes/carrito.png> </a></div>
+                    <div class="text-center"><button class="btn agregar-carrito"id="agregar${id}"href="#" target_self>Agregar<img src=imagenes/carrito.png> </button></div>
                 </div>    
             </div>`;
             contenedorProductos.appendChild(div)
@@ -151,7 +151,7 @@ const actualizarCarrito = () => {
             <td><img class="img-modal" src='${img}' alt="producto 1"></td>                    
             <td class="nombre-modal">${nombre}</td>
             <td id="precioCarrito" class="precio-carrito precio-modal">$${precio}</td>                             
-            <a class="remover-carrito " onclick = "eliminarDelCarrito(${id})" style="cursor: pointer"><img  src='imagenes/eliminar.png'></a>
+            <a class="remover-carrito " onclick = "eliminarDelCarrito(${id})"><img  src='imagenes/eliminar.png'></a>
         </tr>`
         contenedorCarrito.appendChild(div)
         //------------Guardar producto LocalStorage-----------//
@@ -201,7 +201,7 @@ const buscar = () =>{
                     <p class="categoria">Envio gratis</p>    
                     </div>                   
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito"id="agregar${id}"href="#">Agregar<img src=imagenes/carrito.png> </a></div>
+                    <div class="text-center"><button class="btn agregar-carrito"id="agregar${id}"href="#" target_self>Agregar<img src=imagenes/carrito.png> </button></div>
                     </div>    
                     </div>`;   
                     contenedorProductos.appendChild(div)
