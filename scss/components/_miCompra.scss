@@ -25,10 +25,7 @@
     td{
         font-family: 'popi';
         font-weight: bold;
-        font-size: 0.9rem;
-        .prod-id{
-            width: 50px;
-        }
+        font-size: 0.9rem;           
     }
     
     .item-cuenta{    
@@ -39,7 +36,22 @@
         font-size: 1.2rem;
         font-family: 'popi';
         background-color: rgba(128, 128, 128, 0.521);
-    }     
+    }
+    .seguir{
+        border: none;
+        padding: 5px 100px;
+        font-size: 1rem;
+        color: #fff;
+        background: #135e70;
+        box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+        border-radius: 15px;
+        cursor: pointer;
+    
+        &:hover {
+            transform: scale(1.1);
+            color: white;
+        } 
+    }        
 }
 
 .contenedor {
@@ -50,7 +62,7 @@
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;    
+	align-items: center;       
     
 /* ---------- Estilos Generales de las Tarjetas ----------*/
     .tarjeta {
@@ -98,14 +110,14 @@
             }
             .label {
                 font-size: 16px;
-                color: #7d8994;
+                color: #a5a8ac;
                 margin-bottom: 5px;
             }
             .numero,
             .nombre,
             .expiracion {
                 color: #fff;
-                font-size: 22px;
+                font-size: 1rem;
                 text-transform: uppercase;
             }
             .flexbox {
@@ -224,7 +236,7 @@
         input,
         select,
         .btn-enviar {
-            border: 2px solid #CED6E0;
+            border: 2px solid #0f4a4d;
             font-size: 18px;
             height: 50px;
             width: 100%;
@@ -248,6 +260,7 @@
         .flexbox {
             display: flex;
             justify-content: space-between;
+            font-size: 1rem;
         }
         .expira {
             width: 100%;
@@ -275,26 +288,23 @@
         }
         
     } 
-    .button{
-        font-family: 'anto';
-        font-size: 1.8rem;        
-        margin-top: 10px;
-        display: flex;
-        width: 80%;
-        align-items: center;
-        justify-content: space-evenly;
-        .btn-comprar{
-            border-radius: 10px;
-            border: 1px solid  rgba(77, 131, 121, 0.788);
-            background-color: rgba(0, 113, 128, 0.74);
-            padding:0 70px;
-            box-shadow: 2px 7px 20px -5px rgba(26, 43, 40, 0.788);            
-            &:hover {            
-                transform: scale(1.1);
-                color: white;
-            }
+    .seguir,
+    .btn-enviar {
+        border: none;
+        padding: 10px;
+        font-size: 22px;
+        color: #fff;
+        background: #135e70;
+        box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+        border-radius: 15px;
+        cursor: pointer;
+    
+        &:hover {
+            transform: scale(1.1);
+            color: white;
         }
     }
+    
 }
 
 

@@ -41,8 +41,7 @@ carro.forEach((prod) => {
         <td><img src= "${prod.img}" alt="imagen-producto" style="width:150px"></td>        
         <td class:"prod-nombre">${prod.nombre}</td>
         <td class:"prod-cantidad">${prod.cantidad}</td>
-        <td class:"prod-precio">$${prod.precio}</td>       
-        
+        <td class:"prod-precio">$${prod.precio}</td>		    
     </tr> 
     `;
     localStorage.setItem("carro", JSON.stringify(carro)) 
@@ -51,6 +50,9 @@ carro.forEach((prod) => {
 
 contenedorResumen.innerHTML += `
 <p class="item-cuenta"> Total a pagar: $${(carro.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0))}</p>
+<section class="button">                    
+    <a href="index.html" style="text-decoration: none;"><button type="submit" id="btnComprar" class="seguir">Seguir comprando</button></a>
+</section> 
 `;
 
 
@@ -162,7 +164,7 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 	firma.textContent = valorInput;
 
 	if(valorInput == ''){
-		nombreTarjeta.textContent = 'Jhon Doe';
+		nombreTarjeta.textContent = 'Juan Perez Rodriguez';
 	}
 
 	mostrarFrente();

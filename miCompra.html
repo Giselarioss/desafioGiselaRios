@@ -35,7 +35,7 @@
                             <th scope="col" style="width: 30%;">Muestra</th>                            
                             <th scope="col">Nombre</th>
                             <th scope="col">Cantidad</th>
-                            <th scope="col">Precio</th>            
+                            <th scope="col">Precio</th>                                        
                         </tr>
                     </thead>
                     <tbody id="resumenCompra">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="flexbox">
                                 <div class="grupo" id="nombre">
-                                    <p class="label">Nombre tarjeta</p>
+                                    <p class="label">Nombre Tarjeta</p>
                                     <p class="nombre">Juan Perez Rodriguez</p>
                                 </div>
 
@@ -97,10 +97,10 @@
                 <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
                     <div class="grupo">
                         <label for="inputNumero">Número Tarjeta</label>
-                        <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                        <input type="text" id="inputNumero" maxlength="19" autocomplete="off"required>
                     </div>
                     <div class="grupo">
-                        <label for="inputNombre">Nombre</label>
+                        <label for="inputNombre">Nombre Tarjeta</label>
                         <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
                     </div>
                     <div class="flexbox">
@@ -126,12 +126,9 @@
                             <label for="inputCCV">CCV</label>
                             <input type="text" id="inputCCV" maxlength="3">
                         </div>
-                    </div>                    
-                </form>
-                <section class="button">
-                    <button id="btnComprar" class="btn-comprar">Confirmar compra</button>
-                    <a href="index.html" style="text-decoration: none;"><button type="button" id="btnComprar" class="btn-comprar">Seguir comprando</button></a>
-                </section> 
+                    </div>   
+                    <button type="submit" class="btn-enviar" id="btnComprar">Confirmar compra</button>                 
+                </form>                
             </div>                
         
         </main>
@@ -196,6 +193,7 @@
             </script>
             <!-- JS-->        
             <script src="js/miCompra.js"></script>
+            <script src="js/main.js"></script>
         </body>
     </html>
     
