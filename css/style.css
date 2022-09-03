@@ -485,8 +485,7 @@
   margin-bottom: 5px;
 }
 .contenedor .tarjeta .delantera .numero,
-.contenedor .tarjeta .delantera .nombre,
-.contenedor .tarjeta .delantera .expiracion {
+.contenedor .tarjeta .delantera .nombre {
   color: #fff;
   font-size: 1rem;
   text-transform: uppercase;
@@ -599,7 +598,6 @@
   font-size: 16px;
 }
 .contenedor .formulario-tarjeta input,
-.contenedor .formulario-tarjeta select,
 .contenedor .formulario-tarjeta .btn-enviar {
   border: 2px solid #0f4a4d;
   font-size: 18px;
@@ -609,12 +607,10 @@
   transition: 0.3s ease all;
   border-radius: 5px;
 }
-.contenedor .formulario-tarjeta input:hover,
-.contenedor .formulario-tarjeta select:hover {
+.contenedor .formulario-tarjeta input:hover {
   border: 2px solid rgba(2, 123, 129, 0.671);
 }
-.contenedor .formulario-tarjeta input:focus,
-.contenedor .formulario-tarjeta select:focus {
+.contenedor .formulario-tarjeta input:focus {
   outline: rgb(4, 4, 4);
   box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
 }
@@ -627,29 +623,8 @@
   justify-content: space-between;
   font-size: 1rem;
 }
-.contenedor .formulario-tarjeta .expira {
-  width: 100%;
-}
 .contenedor .formulario-tarjeta .ccv {
   min-width: 100px;
-}
-.contenedor .formulario-tarjeta .grupo-select {
-  width: 100%;
-  margin-right: 15px;
-  position: relative;
-}
-.contenedor .formulario-tarjeta .grupo-select i {
-  position: absolute;
-  color: #CED6E0;
-  top: 18px;
-  right: 15px;
-  transition: 0.3s ease all;
-}
-.contenedor .formulario-tarjeta .grupo-select:hover i {
-  color: #93bfed;
-}
-.contenedor .formulario-tarjeta select {
-  -webkit-appearance: none;
 }
 .contenedor .seguir,
 .contenedor .btn-enviar {

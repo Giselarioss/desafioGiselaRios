@@ -114,8 +114,7 @@
                 margin-bottom: 5px;
             }
             .numero,
-            .nombre,
-            .expiracion {
+            .nombre{
                 color: #fff;
                 font-size: 1rem;
                 text-transform: uppercase;
@@ -234,7 +233,6 @@
             font-size: 16px;
         }
         input,
-        select,
         .btn-enviar {
             border: 2px solid #0f4a4d;
             font-size: 18px;
@@ -244,12 +242,10 @@
             transition: .3s ease all;
             border-radius: 5px;
         }
-        input:hover,
-        select:hover {
+        input:hover{
             border: 2px solid rgba(2, 123, 129, 0.671);
         }
-        input:focus,
-        select:focus {
+        input:focus{
             outline: rgb(4,4,4);
             box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
         }
@@ -261,31 +257,10 @@
             display: flex;
             justify-content: space-between;
             font-size: 1rem;
-        }
-        .expira {
-            width: 100%;
-        }
+        }        
         .ccv {
             min-width: 100px;
-        }
-        .grupo-select {
-            width: 100%;
-            margin-right: 15px;
-            position: relative;
-            i {
-                position: absolute;
-                color: #CED6E0;
-                top: 18px;
-                right: 15px;
-                transition: .3s ease all;
-            }
-            &:hover i {
-                color: #93bfed;
-            }
-        }
-        select {
-            -webkit-appearance: none;
-        }
+        }       
         
     } 
     .seguir,

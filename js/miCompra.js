@@ -4,7 +4,7 @@ let contenedorResumen = document.getElementById("resumenCompra");
 carro = JSON.parse(localStorage.getItem("carro"));
 console.log(carro);
 // Busco el boton de comprar
-let botonComprar = document.getElementById("btnComprar");
+let botonComprar = document.getElementById("btn-submit");
 
 
 //---------------------------------------------------//
@@ -50,9 +50,7 @@ const tarjeta = document.querySelector('#tarjeta'),
 	numeroTarjeta = document.querySelector('#tarjeta .numero'),
 	nombreTarjeta = document.querySelector('#tarjeta .nombre'),
     logoMarca = document.querySelector('#logo-marca'),
-	firma = document.querySelector('#tarjeta .firma p'),
-	mesExpiracion = document.querySelector('#tarjeta .mes'),
-	yearExpiracion = document.querySelector('#tarjeta .year'),
+	firma = document.querySelector('#tarjeta .firma p'),	
 	ccv = document.querySelector('#tarjeta .ccv');
 
 // * Volteamos la tarjeta para mostrar el frente.
@@ -72,23 +70,6 @@ btnAbrirFormulario.addEventListener('click', () => {
 	btnAbrirFormulario.classList.toggle('active');
 	formulario.classList.toggle('active');
 });
-
-// * Select del mes generado dinamicamente.
-for(let i = 1; i <= 12; i++){
-	let opcion = document.createElement('option');
-	opcion.value = i;
-	opcion.innerText = i;
-	formulario.selectMes.appendChild(opcion);
-}
-
-// * Select del año generado dinamicamente.
-const yearActual = new Date().getFullYear();
-for(let i = yearActual; i <= yearActual + 8; i++){
-	let opcion = document.createElement('option');
-	opcion.value = i;
-	opcion.innerText = i;
-	formulario.selectYear.appendChild(opcion);
-}
 
 // * Input numero de tarjeta
 formulario.inputNumero.addEventListener('keyup', (e) => {
@@ -143,18 +124,6 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 	mostrarFrente();
 });
 
-// * Select mes
-formulario.selectMes.addEventListener('change', (e) => {
-	mesExpiracion.textContent = e.target.value;
-	mostrarFrente();
-});
-
-// * Select Año
-formulario.selectYear.addEventListener('change', (e) => {
-	yearExpiracion.textContent = e.target.value.slice(2);
-	mostrarFrente();
-});
-
 // * CCV
 formulario.inputCCV.addEventListener('keyup', () => {
 	if(!tarjeta.classList.contains('active')){
@@ -170,16 +139,23 @@ formulario.inputCCV.addEventListener('keyup', () => {
 	ccv.textContent = formulario.inputCCV.value;
 });
 
+
+
+
 //---------------------------------------------------//
 //----------------------Compra---------------------//
 //--------------------------------------------------//
 const compraProcesada = () => {    
-    if (carro.length != 0){         
+    if (carro.length != 0){  
+
 		localStorage.removeItem("carro", JSON.stringify(carro)) ;               	 
 	} 
 				 	    
 }
+
 botonComprar.addEventListener("click", compraProcesada); 
+
+
 
 
 

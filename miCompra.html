@@ -68,12 +68,7 @@
                                 <div class="grupo" id="nombre">
                                     <p class="label">Nombre Tarjeta</p>
                                     <p class="nombre">Juan Perez Rodriguez</p>
-                                </div>
-
-                                <div class="grupo" id="expiracion">
-                                    <p class="label">Expiracion</p>
-                                    <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -109,31 +104,14 @@
                         <label for="inputNombre">Nombre Tarjeta</label>
                         <input type="text" id="inputNombre" maxlength="19" autocomplete="off" required>
                     </div>
-                    <div class="flexbox">
-                        <div class="grupo expira">
-                            <label for="selectMes">Expiracion</label>                            
-                            <div class="flexbox">
-                                <div class="grupo-select">
-                                    <select name="mes" id="selectMes">
-                                        <option disabled selected>Mes</option>
-                                    </select>
-                                    <i class="fas fa-angle-down"></i>
-                                </div>
-                                <div class="grupo-select">
-                                    <select name="year" id="selectYear">
-                                        <option disabled selected>Año</option>
-                                    </select>
-                                    <i class="fas fa-angle-down"></i>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="flexbox">                   
         
                         <div class="grupo ccv">
                             <label for="inputCCV">CCV</label>
                             <input type="text" id="inputCCV" maxlength="3" required>
                         </div>
                     </div>   
-                    <button type="submit" class="btn-enviar" id="btnComprar" >Confirmar compra</a></button>                 
+                    <button type="submit" class="btn-enviar" id="btn-submit" >Confirmar compra</button>                 
                 </form>                
             </div>                
             <div id="finalizar"></div>
