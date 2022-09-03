@@ -5,7 +5,7 @@ let carritoIcono = document.querySelector("#carrito");
 let carrito = document.querySelector(".mi-carrito");
 let precioTotal = document.getElementById("precioTotal");
 let contadorCarrito = document.getElementById("contadorCarrito");
-let botonComprar = document.getElementById("btnComprar");
+
 let vaciarCarrito = document.getElementById("vaciarCarrito");
 
 

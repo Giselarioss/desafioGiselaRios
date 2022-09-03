@@ -186,13 +186,13 @@
 .botones #vaciarCarrito:hover {
   transform: scale(1.1);
 }
-.botones #btnComprar {
+.botones #compra {
   font-size: 0.8rem;
   width: 40%;
   height: 30px;
   border-radius: 10px;
 }
-.botones #btnComprar:hover {
+.botones #compra:hover {
   transform: scale(1.1);
 }
 

@@ -1,3 +1,4 @@
+
 let contenedorResumen = document.getElementById("resumenCompra");
 // Traigo el carro con los productos
 carro = JSON.parse(localStorage.getItem("carro"));
@@ -5,23 +6,6 @@ console.log(carro);
 // Busco el boton de comprar
 let botonComprar = document.getElementById("btnComprar");
 
-
-
-//botonComprar.addEventListener("click", compraProcesada);
-
-//---------------------------------------------------//
-//------------------Eliminar producto----------------//
-//--------------------------------------------------//
-const eliminarDelCarrito = (prodId) => {
-    const item = carro.find((prod) => prod.id == prodId)    
-    const index = carro.indexOf(item)    
-    carro[index].cantidad = 0
-    //------ Elimino el producto del array--------//
-    carro.splice(index, 1)
-    localStorage.removeItem("carro", JSON.stringify(carro))
-    actualizarCarrito()
-    
-}
 
 //---------------------------------------------------//
 //--------------------card compra-------------------//
@@ -187,26 +171,16 @@ formulario.inputCCV.addEventListener('keyup', () => {
 });
 
 //---------------------------------------------------//
-//-----------Validacion de formulario----------------//
-//--------------------------------------------------// 
-
-function validarFormulario(evento) {
-	evento.preventDefault();
-	const nombreTarjeta = document.querySelector('#tarjeta .nombre').value;
-	if (nombreTarjeta.value === "") {
-		return;
-	}
-	const numeroTarjeta = document.querySelector('#tarjeta .numero').value;
-	if (numeroTarjeta.value === "") {
-		return;
-	}
-	const ccv = document.querySelector('#tarjeta .ccv').value;
-	if (ccv.value === "") {
-		return;        
-	}
-
-	
+//----------------------Compra---------------------//
+//--------------------------------------------------//
+const compraProcesada = () => {    
+    if (carro.length != 0){         
+		localStorage.removeItem("carro", JSON.stringify(carro)) ;               	 
+	} 
+				 	    
 }
-localStorage.removeItem("carro", JSON.stringify(carro)) 
+botonComprar.addEventListener("click", compraProcesada); 
 
-botonComprar.addEventListener('submit', validarFormulario);
+
+
+
