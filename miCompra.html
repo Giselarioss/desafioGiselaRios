@@ -42,6 +42,9 @@
                      <!---------agrego tabla para la compra con js------->
                     </tbody>
                 </table>
+                <section class="button">                    
+                    <a href="index.html" style="text-decoration: none;"><button type="submit" class="seguir">Seguir comprando</button></a>
+                </section> 
             </section>
             <!-----------Modo de pago---------->
             <h2 class="h2">2) Forma de pago</h2>
@@ -97,11 +100,11 @@
                 <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
                     <div class="grupo">
                         <label for="inputNumero">Número Tarjeta</label>
-                        <input type="text" id="inputNumero" maxlength="19" autocomplete="off"required>
+                        <input type="text" id="inputNumero" maxlength="19" autocomplete="off" required>
                     </div>
                     <div class="grupo">
                         <label for="inputNombre">Nombre Tarjeta</label>
-                        <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+                        <input type="text" id="inputNombre" maxlength="19" autocomplete="off" required>
                     </div>
                     <div class="flexbox">
                         <div class="grupo expira">
@@ -124,10 +127,10 @@
         
                         <div class="grupo ccv">
                             <label for="inputCCV">CCV</label>
-                            <input type="text" id="inputCCV" maxlength="3">
+                            <input type="text" id="inputCCV" maxlength="3" required>
                         </div>
                     </div>   
-                    <button type="submit" class="btn-enviar" id="btnComprar">Confirmar compra</button>                 
+                    <button type="submit" class="btn-enviar" id="btnComprar" >Confirmar compra</button>                 
                 </form>                
             </div>                
         
@@ -192,8 +195,7 @@
               AOS.init();
             </script>
             <!-- JS-->        
-            <script src="js/miCompra.js"></script>
-            <script src="js/main.js"></script>
+            <script src="js/miCompra.js"></script>            
         </body>
     </html>
     

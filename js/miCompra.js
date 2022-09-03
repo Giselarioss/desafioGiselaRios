@@ -6,30 +6,22 @@ console.log(carro);
 let botonComprar = document.getElementById("btnComprar");
 
 
+
+//botonComprar.addEventListener("click", compraProcesada);
+
 //---------------------------------------------------//
-//------------------Boton comprar-------------------//
+//------------------Eliminar producto----------------//
 //--------------------------------------------------//
-const compraProcesada = () => {    
-    if (carro.length != 0){       
-        Swal.fire({
-            title: "¡Gracias por tu compra!",
-            iconColor: "rgb(0, 82, 86)",
-            icon: "success",
-            color: "black",
-            confirmButtonText: "OK",
-            confirmButtonColor: "rgb(0, 82, 86)",
-            padding: "1rem 0.3rem"
-			
-        })   
-
-        localStorage.removeItem("carro", JSON.stringify(carro))       
-    }    
-    console.log(...carro);
-    carro.length = 0;
-    actualizarCarrito();
+const eliminarDelCarrito = (prodId) => {
+    const item = carro.find((prod) => prod.id == prodId)    
+    const index = carro.indexOf(item)    
+    carro[index].cantidad = 0
+    //------ Elimino el producto del array--------//
+    carro.splice(index, 1)
+    localStorage.removeItem("carro", JSON.stringify(carro))
+    actualizarCarrito()
+    
 }
-botonComprar.addEventListener("click", compraProcesada);
-
 
 //---------------------------------------------------//
 //--------------------card compra-------------------//
@@ -41,7 +33,7 @@ carro.forEach((prod) => {
         <td><img src= "${prod.img}" alt="imagen-producto" style="width:150px"></td>        
         <td class:"prod-nombre">${prod.nombre}</td>
         <td class:"prod-cantidad">${prod.cantidad}</td>
-        <td class:"prod-precio">$${prod.precio}</td>		    
+        <td class:"prod-precio">$${prod.precio}</td>        
     </tr> 
     `;
     localStorage.setItem("carro", JSON.stringify(carro)) 
@@ -50,9 +42,6 @@ carro.forEach((prod) => {
 
 contenedorResumen.innerHTML += `
 <p class="item-cuenta"> Total a pagar: $${(carro.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0))}</p>
-<section class="button">                    
-    <a href="index.html" style="text-decoration: none;"><button type="submit" id="btnComprar" class="seguir">Seguir comprando</button></a>
-</section> 
 `;
 
 
@@ -196,3 +185,28 @@ formulario.inputCCV.addEventListener('keyup', () => {
 
 	ccv.textContent = formulario.inputCCV.value;
 });
+
+//---------------------------------------------------//
+//-----------Validacion de formulario----------------//
+//--------------------------------------------------// 
+
+function validarFormulario(evento) {
+	evento.preventDefault();
+	const nombreTarjeta = document.querySelector('#tarjeta .nombre').value;
+	if (nombreTarjeta.value === "") {
+		return;
+	}
+	const numeroTarjeta = document.querySelector('#tarjeta .numero').value;
+	if (numeroTarjeta.value === "") {
+		return;
+	}
+	const ccv = document.querySelector('#tarjeta .ccv').value;
+	if (ccv.value === "") {
+		return;        
+	}
+
+	
+}
+localStorage.removeItem("carro", JSON.stringify(carro)) 
+
+botonComprar.addEventListener('submit', validarFormulario);

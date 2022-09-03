@@ -37,22 +37,22 @@
         font-family: 'popi';
         background-color: rgba(128, 128, 128, 0.521);
     }
-    .seguir{
-        border: none;
-        padding: 5px 100px;
-        font-size: 1rem;
-        color: #fff;
-        background: #135e70;
-        box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
-        border-radius: 15px;
-        cursor: pointer;
     
-        &:hover {
-            transform: scale(1.1);
-            color: white;
-        } 
-    }        
 }
+.seguir{
+    border: none;
+    padding: 5px 100px;
+    font-size: 1rem;
+    color: #fff;
+    background: #135e70;
+    box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+    border-radius: 15px;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+        color: white;
+    } 
+}        
 
 .contenedor {
     background: rgba(128, 128, 128, 0.158);

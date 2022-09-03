@@ -44,7 +44,6 @@
 .menu .search .search-box .search-input {
   border: none;
   outline: none;
-  background: none;
 }
 .menu .search button {
   border: 1px solid grey;
@@ -405,7 +404,8 @@
   font-family: "popi";
   background-color: rgba(128, 128, 128, 0.521);
 }
-.table-hover .seguir {
+
+.seguir {
   border: none;
   padding: 5px 100px;
   font-size: 1rem;
@@ -415,7 +415,7 @@
   border-radius: 15px;
   cursor: pointer;
 }
-.table-hover .seguir:hover {
+.seguir:hover {
   transform: scale(1.1);
   color: white;
 }
