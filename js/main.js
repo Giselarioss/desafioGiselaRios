@@ -5,7 +5,6 @@ let carritoIcono = document.querySelector("#carrito");
 let carrito = document.querySelector(".mi-carrito");
 let precioTotal = document.getElementById("precioTotal");
 let contadorCarrito = document.getElementById("contadorCarrito");
-
 let vaciarCarrito = document.getElementById("vaciarCarrito");
 
 
@@ -129,6 +128,17 @@ const eliminarDelCarrito = (prodId) => {
     //------ Elimino el producto del array--------//
     carro.splice(index, 1)
     localStorage.removeItem("carro", JSON.stringify(carro))
+    Toastify({
+        text: "Producto eliminado",
+        duration: 1500,
+        style: {            
+            background: "rgb(245, 160, 160)",            
+            color: "black",                    
+            
+        },
+        close: true,
+        gravity: "bottom",
+    }).showToast();
     actualizarCarrito()
     
 }
