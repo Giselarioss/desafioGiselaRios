@@ -17,10 +17,12 @@
 <a href="https://desafio-gisela-rios.vercel.app/">
     <img src="imagenes/view.png" alt="imagen proyecto" width="1000" height="500" >
   </a>
+  
+  
+  
 
 This proyect is a ecommerce, creat for the curse the JavaScript in CoderHouse.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
