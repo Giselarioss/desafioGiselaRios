@@ -21,7 +21,7 @@
   
   
 
-This proyect is a ecommerce, creat for the curse the JavaScript in CoderHouse.
+This work is an ecommerce, created as a final project of the  JavaScript course in CoderHouse.
 
 
 
