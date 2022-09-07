@@ -34,6 +34,7 @@ This work is an ecommerce, created as a final project of the  JavaScript course 
 * JavaScript
 * Sass
 * Bootstrap
+* JSON
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
